@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace UsiClient;
+namespace Common;
 
 public interface IAusKeyManager
 {

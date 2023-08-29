@@ -3,11 +3,10 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.Xml.XPath;
-using Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace UsiClient;
+namespace Common;
 
 public class AusKeyManager : IAusKeyManager
 {

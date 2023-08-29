@@ -1,4 +1,3 @@
-using System.ServiceModel;
 using System.Xml;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 
@@ -6,7 +5,9 @@ namespace UsiClient;
 
 public interface IWSMessageHelper
 {
-    XmlElement GetLifeTimeElement(Lifetime lifetime);
+    XmlElement GetLifeTimeElement(TimeSpan timeSpan);
 
-    XmlElement GetAppliesToElement(EndpointAddress endpointAddress);
+    XmlElement GetAppliesToElement(Uri endpointAddress);
+
+    Claims GetRequiredClaimTypes();
 }

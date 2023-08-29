@@ -3,21 +3,24 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using UsiClient;
+using UsiClient.IssuerBinding;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", false)
     .Build();
-
 ServiceCollection serviceCollection = new();
 var serviceProvider = serviceCollection
     .AddSingleton<IConfiguration>(configuration)
     .AddTransient<IAusKeyManager, AusKeyManager>()
     .AddTransient<IWSMessageHelper, WSMessageHelper>()
+    //.AddTransient<IUSIService, UsiClient.IssuedToken.UsiServiceClient>()
     .AddTransient<IUSIService, UsiServiceClient>()
     .AddLogging(config => { config.AddSimpleConsole(); })
     .BuildServiceProvider();
+
 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+Console.Clear();
 logger.LogInformation("Running...");
 try
 {
