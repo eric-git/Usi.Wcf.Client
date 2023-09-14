@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UsiClient
+namespace Common.ServiceClient
 {
     
     
@@ -1358,69 +1358,69 @@ namespace UsiClient
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://usi.gov.au/2022/ws/servicepolicy", ConfigurationName="UsiClient.IUSIService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://usi.gov.au/2022/ws/servicepolicy", ConfigurationName="Common.ServiceClient.IUSIService")]
     public interface IUSIService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkUpload", ReplyAction="http://usi.gov.au/2022/ws/BulkUploadResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.BulkUploadResponse> BulkUploadAsync(UsiClient.BulkUploadRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> BulkUploadAsync(Common.ServiceClient.BulkUploadRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkVerifyUSI", ReplyAction="http://usi.gov.au/2022/ws/BulkVerifyUSIResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(UsiClient.BulkVerifyUSIRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/VerifyUSI", ReplyAction="http://usi.gov.au/2022/ws/VerifyUSIResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.VerifyUSIResponse> VerifyUSIAsync(UsiClient.VerifyUSIRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> VerifyUSIAsync(Common.ServiceClient.VerifyUSIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkUploadRetrieve", ReplyAction="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(UsiClient.BulkUploadRetrieveRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/CreateUSI", ReplyAction="http://usi.gov.au/2022/ws/CreateUSIResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.CreateUSIResponse> CreateUSIAsync(UsiClient.CreateUSIRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> CreateUSIAsync(Common.ServiceClient.CreateUSIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypes", ReplyAction="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(UsiClient.GetNonDvsDocumentTypesRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetails", ReplyAction="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(UsiClient.UpdateUSIContactDetailsRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetails", ReplyAction="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(UsiClient.UpdateUSIPersonalDetailsRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/LocateUSI", ReplyAction="http://usi.gov.au/2022/ws/LocateUSIResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.LocateUSIResponse> LocateUSIAsync(UsiClient.LocateUSIRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> LocateUSIAsync(Common.ServiceClient.LocateUSIRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/GetCountries", ReplyAction="http://usi.gov.au/2022/ws/GetCountriesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
-        [System.ServiceModel.FaultContractAttribute(typeof(UsiClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<UsiClient.GetCountriesResponse> GetCountriesAsync(UsiClient.GetCountriesRequest request);
+        System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> GetCountriesAsync(Common.ServiceClient.GetCountriesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1431,13 +1431,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkUploadType BulkUpload;
+        public Common.ServiceClient.BulkUploadType BulkUpload;
         
         public BulkUploadRequest()
         {
         }
         
-        public BulkUploadRequest(UsiClient.BulkUploadType BulkUpload)
+        public BulkUploadRequest(Common.ServiceClient.BulkUploadType BulkUpload)
         {
             this.BulkUpload = BulkUpload;
         }
@@ -1451,13 +1451,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkUploadResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkUploadResponseType BulkUploadResponse1;
+        public Common.ServiceClient.BulkUploadResponseType BulkUploadResponse1;
         
         public BulkUploadResponse()
         {
         }
         
-        public BulkUploadResponse(UsiClient.BulkUploadResponseType BulkUploadResponse1)
+        public BulkUploadResponse(Common.ServiceClient.BulkUploadResponseType BulkUploadResponse1)
         {
             this.BulkUploadResponse1 = BulkUploadResponse1;
         }
@@ -1830,13 +1830,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkVerifyUSIType BulkVerifyUSI;
+        public Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI;
         
         public BulkVerifyUSIRequest()
         {
         }
         
-        public BulkVerifyUSIRequest(UsiClient.BulkVerifyUSIType BulkVerifyUSI)
+        public BulkVerifyUSIRequest(Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI)
         {
             this.BulkVerifyUSI = BulkVerifyUSI;
         }
@@ -1850,13 +1850,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkVerifyUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1;
+        public Common.ServiceClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1;
         
         public BulkVerifyUSIResponse()
         {
         }
         
-        public BulkVerifyUSIResponse(UsiClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1)
+        public BulkVerifyUSIResponse(Common.ServiceClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1)
         {
             this.BulkVerifyUSIResponse1 = BulkVerifyUSIResponse1;
         }
@@ -2102,13 +2102,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.VerifyUSIType VerifyUSI;
+        public Common.ServiceClient.VerifyUSIType VerifyUSI;
         
         public VerifyUSIRequest()
         {
         }
         
-        public VerifyUSIRequest(UsiClient.VerifyUSIType VerifyUSI)
+        public VerifyUSIRequest(Common.ServiceClient.VerifyUSIType VerifyUSI)
         {
             this.VerifyUSI = VerifyUSI;
         }
@@ -2122,13 +2122,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="VerifyUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.VerifyUSIResponseType VerifyUSIResponse1;
+        public Common.ServiceClient.VerifyUSIResponseType VerifyUSIResponse1;
         
         public VerifyUSIResponse()
         {
         }
         
-        public VerifyUSIResponse(UsiClient.VerifyUSIResponseType VerifyUSIResponse1)
+        public VerifyUSIResponse(Common.ServiceClient.VerifyUSIResponseType VerifyUSIResponse1)
         {
             this.VerifyUSIResponse1 = VerifyUSIResponse1;
         }
@@ -2416,13 +2416,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkUploadRetrieveType BulkUploadRetrieve;
+        public Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve;
         
         public BulkUploadRetrieveRequest()
         {
         }
         
-        public BulkUploadRetrieveRequest(UsiClient.BulkUploadRetrieveType BulkUploadRetrieve)
+        public BulkUploadRetrieveRequest(Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve)
         {
             this.BulkUploadRetrieve = BulkUploadRetrieve;
         }
@@ -2436,13 +2436,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkUploadRetrieveResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1;
+        public Common.ServiceClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1;
         
         public BulkUploadRetrieveResponse()
         {
         }
         
-        public BulkUploadRetrieveResponse(UsiClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1)
+        public BulkUploadRetrieveResponse(Common.ServiceClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1)
         {
             this.BulkUploadRetrieveResponse1 = BulkUploadRetrieveResponse1;
         }
@@ -2536,13 +2536,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.CreateUSIType CreateUSI;
+        public Common.ServiceClient.CreateUSIType CreateUSI;
         
         public CreateUSIRequest()
         {
         }
         
-        public CreateUSIRequest(UsiClient.CreateUSIType CreateUSI)
+        public CreateUSIRequest(Common.ServiceClient.CreateUSIType CreateUSI)
         {
             this.CreateUSI = CreateUSI;
         }
@@ -2556,13 +2556,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.CreateUSIResponseType CreateUSIResponse1;
+        public Common.ServiceClient.CreateUSIResponseType CreateUSIResponse1;
         
         public CreateUSIResponse()
         {
         }
         
-        public CreateUSIResponse(UsiClient.CreateUSIResponseType CreateUSIResponse1)
+        public CreateUSIResponse(Common.ServiceClient.CreateUSIResponseType CreateUSIResponse1)
         {
             this.CreateUSIResponse1 = CreateUSIResponse1;
         }
@@ -2681,13 +2681,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes;
+        public Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes;
         
         public GetNonDvsDocumentTypesRequest()
         {
         }
         
-        public GetNonDvsDocumentTypesRequest(UsiClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
+        public GetNonDvsDocumentTypesRequest(Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
         {
             this.GetNonDvsDocumentTypes = GetNonDvsDocumentTypes;
         }
@@ -2701,13 +2701,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetNonDvsDocumentTypesResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1;
+        public Common.ServiceClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1;
         
         public GetNonDvsDocumentTypesResponse()
         {
         }
         
-        public GetNonDvsDocumentTypesResponse(UsiClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1)
+        public GetNonDvsDocumentTypesResponse(Common.ServiceClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1)
         {
             this.GetNonDvsDocumentTypesResponse1 = GetNonDvsDocumentTypesResponse1;
         }
@@ -2920,13 +2920,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.UpdateUSIContactDetailsType UpdateUSIContactDetails;
+        public Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails;
         
         public UpdateUSIContactDetailsRequest()
         {
         }
         
-        public UpdateUSIContactDetailsRequest(UsiClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
+        public UpdateUSIContactDetailsRequest(Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
         {
             this.UpdateUSIContactDetails = UpdateUSIContactDetails;
         }
@@ -2940,13 +2940,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateUSIContactDetailsResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1;
+        public Common.ServiceClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1;
         
         public UpdateUSIContactDetailsResponse()
         {
         }
         
-        public UpdateUSIContactDetailsResponse(UsiClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1)
+        public UpdateUSIContactDetailsResponse(Common.ServiceClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1)
         {
             this.UpdateUSIContactDetailsResponse1 = UpdateUSIContactDetailsResponse1;
         }
@@ -3478,13 +3478,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails;
+        public Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails;
         
         public UpdateUSIPersonalDetailsRequest()
         {
         }
         
-        public UpdateUSIPersonalDetailsRequest(UsiClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
+        public UpdateUSIPersonalDetailsRequest(Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
         {
             this.UpdateUSIPersonalDetails = UpdateUSIPersonalDetails;
         }
@@ -3498,13 +3498,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateUSIPersonalDetailsResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1;
+        public Common.ServiceClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1;
         
         public UpdateUSIPersonalDetailsResponse()
         {
         }
         
-        public UpdateUSIPersonalDetailsResponse(UsiClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1)
+        public UpdateUSIPersonalDetailsResponse(Common.ServiceClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1)
         {
             this.UpdateUSIPersonalDetailsResponse1 = UpdateUSIPersonalDetailsResponse1;
         }
@@ -3897,13 +3897,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.LocateUSIType LocateUSI;
+        public Common.ServiceClient.LocateUSIType LocateUSI;
         
         public LocateUSIRequest()
         {
         }
         
-        public LocateUSIRequest(UsiClient.LocateUSIType LocateUSI)
+        public LocateUSIRequest(Common.ServiceClient.LocateUSIType LocateUSI)
         {
             this.LocateUSI = LocateUSI;
         }
@@ -3917,13 +3917,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="LocateUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.LocateUSIResponseType LocateUSIResponse1;
+        public Common.ServiceClient.LocateUSIResponseType LocateUSIResponse1;
         
         public LocateUSIResponse()
         {
         }
         
-        public LocateUSIResponse(UsiClient.LocateUSIResponseType LocateUSIResponse1)
+        public LocateUSIResponse(Common.ServiceClient.LocateUSIResponseType LocateUSIResponse1)
         {
             this.LocateUSIResponse1 = LocateUSIResponse1;
         }
@@ -4042,13 +4042,13 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.GetCountriesType GetCountries;
+        public Common.ServiceClient.GetCountriesType GetCountries;
         
         public GetCountriesRequest()
         {
         }
         
-        public GetCountriesRequest(UsiClient.GetCountriesType GetCountries)
+        public GetCountriesRequest(Common.ServiceClient.GetCountriesType GetCountries)
         {
             this.GetCountries = GetCountries;
         }
@@ -4062,26 +4062,26 @@ namespace UsiClient
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCountriesResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
-        public UsiClient.GetCountriesResponseType GetCountriesResponse1;
+        public Common.ServiceClient.GetCountriesResponseType GetCountriesResponse1;
         
         public GetCountriesResponse()
         {
         }
         
-        public GetCountriesResponse(UsiClient.GetCountriesResponseType GetCountriesResponse1)
+        public GetCountriesResponse(Common.ServiceClient.GetCountriesResponseType GetCountriesResponse1)
         {
             this.GetCountriesResponse1 = GetCountriesResponse1;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public interface IUSIServiceChannel : UsiClient.IUSIService, System.ServiceModel.IClientChannel
+    public interface IUSIServiceChannel : Common.ServiceClient.IUSIService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public partial class USIServiceClient : System.ServiceModel.ClientBase<UsiClient.IUSIService>, UsiClient.IUSIService
+    public partial class USIServiceClient : System.ServiceModel.ClientBase<Common.ServiceClient.IUSIService>, Common.ServiceClient.IUSIService
     {
         
         public USIServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
@@ -4090,133 +4090,133 @@ namespace UsiClient
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.BulkUploadResponse> UsiClient.IUSIService.BulkUploadAsync(UsiClient.BulkUploadRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> Common.ServiceClient.IUSIService.BulkUploadAsync(Common.ServiceClient.BulkUploadRequest request)
         {
             return base.Channel.BulkUploadAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.BulkUploadResponse> BulkUploadAsync(UsiClient.BulkUploadType BulkUpload)
+        public System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> BulkUploadAsync(Common.ServiceClient.BulkUploadType BulkUpload)
         {
-            UsiClient.BulkUploadRequest inValue = new UsiClient.BulkUploadRequest();
+            Common.ServiceClient.BulkUploadRequest inValue = new Common.ServiceClient.BulkUploadRequest();
             inValue.BulkUpload = BulkUpload;
-            return ((UsiClient.IUSIService)(this)).BulkUploadAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).BulkUploadAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.BulkVerifyUSIResponse> UsiClient.IUSIService.BulkVerifyUSIAsync(UsiClient.BulkVerifyUSIRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> Common.ServiceClient.IUSIService.BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIRequest request)
         {
             return base.Channel.BulkVerifyUSIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(UsiClient.BulkVerifyUSIType BulkVerifyUSI)
+        public System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI)
         {
-            UsiClient.BulkVerifyUSIRequest inValue = new UsiClient.BulkVerifyUSIRequest();
+            Common.ServiceClient.BulkVerifyUSIRequest inValue = new Common.ServiceClient.BulkVerifyUSIRequest();
             inValue.BulkVerifyUSI = BulkVerifyUSI;
-            return ((UsiClient.IUSIService)(this)).BulkVerifyUSIAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).BulkVerifyUSIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.VerifyUSIResponse> UsiClient.IUSIService.VerifyUSIAsync(UsiClient.VerifyUSIRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> Common.ServiceClient.IUSIService.VerifyUSIAsync(Common.ServiceClient.VerifyUSIRequest request)
         {
             return base.Channel.VerifyUSIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.VerifyUSIResponse> VerifyUSIAsync(UsiClient.VerifyUSIType VerifyUSI)
+        public System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> VerifyUSIAsync(Common.ServiceClient.VerifyUSIType VerifyUSI)
         {
-            UsiClient.VerifyUSIRequest inValue = new UsiClient.VerifyUSIRequest();
+            Common.ServiceClient.VerifyUSIRequest inValue = new Common.ServiceClient.VerifyUSIRequest();
             inValue.VerifyUSI = VerifyUSI;
-            return ((UsiClient.IUSIService)(this)).VerifyUSIAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).VerifyUSIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.BulkUploadRetrieveResponse> UsiClient.IUSIService.BulkUploadRetrieveAsync(UsiClient.BulkUploadRetrieveRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> Common.ServiceClient.IUSIService.BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveRequest request)
         {
             return base.Channel.BulkUploadRetrieveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(UsiClient.BulkUploadRetrieveType BulkUploadRetrieve)
+        public System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve)
         {
-            UsiClient.BulkUploadRetrieveRequest inValue = new UsiClient.BulkUploadRetrieveRequest();
+            Common.ServiceClient.BulkUploadRetrieveRequest inValue = new Common.ServiceClient.BulkUploadRetrieveRequest();
             inValue.BulkUploadRetrieve = BulkUploadRetrieve;
-            return ((UsiClient.IUSIService)(this)).BulkUploadRetrieveAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).BulkUploadRetrieveAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.CreateUSIResponse> UsiClient.IUSIService.CreateUSIAsync(UsiClient.CreateUSIRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> Common.ServiceClient.IUSIService.CreateUSIAsync(Common.ServiceClient.CreateUSIRequest request)
         {
             return base.Channel.CreateUSIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.CreateUSIResponse> CreateUSIAsync(UsiClient.CreateUSIType CreateUSI)
+        public System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> CreateUSIAsync(Common.ServiceClient.CreateUSIType CreateUSI)
         {
-            UsiClient.CreateUSIRequest inValue = new UsiClient.CreateUSIRequest();
+            Common.ServiceClient.CreateUSIRequest inValue = new Common.ServiceClient.CreateUSIRequest();
             inValue.CreateUSI = CreateUSI;
-            return ((UsiClient.IUSIService)(this)).CreateUSIAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).CreateUSIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.GetNonDvsDocumentTypesResponse> UsiClient.IUSIService.GetNonDvsDocumentTypesAsync(UsiClient.GetNonDvsDocumentTypesRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> Common.ServiceClient.IUSIService.GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesRequest request)
         {
             return base.Channel.GetNonDvsDocumentTypesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(UsiClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
+        public System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
         {
-            UsiClient.GetNonDvsDocumentTypesRequest inValue = new UsiClient.GetNonDvsDocumentTypesRequest();
+            Common.ServiceClient.GetNonDvsDocumentTypesRequest inValue = new Common.ServiceClient.GetNonDvsDocumentTypesRequest();
             inValue.GetNonDvsDocumentTypes = GetNonDvsDocumentTypes;
-            return ((UsiClient.IUSIService)(this)).GetNonDvsDocumentTypesAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).GetNonDvsDocumentTypesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.UpdateUSIContactDetailsResponse> UsiClient.IUSIService.UpdateUSIContactDetailsAsync(UsiClient.UpdateUSIContactDetailsRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> Common.ServiceClient.IUSIService.UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsRequest request)
         {
             return base.Channel.UpdateUSIContactDetailsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(UsiClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
+        public System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
         {
-            UsiClient.UpdateUSIContactDetailsRequest inValue = new UsiClient.UpdateUSIContactDetailsRequest();
+            Common.ServiceClient.UpdateUSIContactDetailsRequest inValue = new Common.ServiceClient.UpdateUSIContactDetailsRequest();
             inValue.UpdateUSIContactDetails = UpdateUSIContactDetails;
-            return ((UsiClient.IUSIService)(this)).UpdateUSIContactDetailsAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).UpdateUSIContactDetailsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.UpdateUSIPersonalDetailsResponse> UsiClient.IUSIService.UpdateUSIPersonalDetailsAsync(UsiClient.UpdateUSIPersonalDetailsRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> Common.ServiceClient.IUSIService.UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsRequest request)
         {
             return base.Channel.UpdateUSIPersonalDetailsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(UsiClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
+        public System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
         {
-            UsiClient.UpdateUSIPersonalDetailsRequest inValue = new UsiClient.UpdateUSIPersonalDetailsRequest();
+            Common.ServiceClient.UpdateUSIPersonalDetailsRequest inValue = new Common.ServiceClient.UpdateUSIPersonalDetailsRequest();
             inValue.UpdateUSIPersonalDetails = UpdateUSIPersonalDetails;
-            return ((UsiClient.IUSIService)(this)).UpdateUSIPersonalDetailsAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).UpdateUSIPersonalDetailsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.LocateUSIResponse> UsiClient.IUSIService.LocateUSIAsync(UsiClient.LocateUSIRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> Common.ServiceClient.IUSIService.LocateUSIAsync(Common.ServiceClient.LocateUSIRequest request)
         {
             return base.Channel.LocateUSIAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.LocateUSIResponse> LocateUSIAsync(UsiClient.LocateUSIType LocateUSI)
+        public System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> LocateUSIAsync(Common.ServiceClient.LocateUSIType LocateUSI)
         {
-            UsiClient.LocateUSIRequest inValue = new UsiClient.LocateUSIRequest();
+            Common.ServiceClient.LocateUSIRequest inValue = new Common.ServiceClient.LocateUSIRequest();
             inValue.LocateUSI = LocateUSI;
-            return ((UsiClient.IUSIService)(this)).LocateUSIAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).LocateUSIAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<UsiClient.GetCountriesResponse> UsiClient.IUSIService.GetCountriesAsync(UsiClient.GetCountriesRequest request)
+        System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> Common.ServiceClient.IUSIService.GetCountriesAsync(Common.ServiceClient.GetCountriesRequest request)
         {
             return base.Channel.GetCountriesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<UsiClient.GetCountriesResponse> GetCountriesAsync(UsiClient.GetCountriesType GetCountries)
+        public System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> GetCountriesAsync(Common.ServiceClient.GetCountriesType GetCountries)
         {
-            UsiClient.GetCountriesRequest inValue = new UsiClient.GetCountriesRequest();
+            Common.ServiceClient.GetCountriesRequest inValue = new Common.ServiceClient.GetCountriesRequest();
             inValue.GetCountries = GetCountries;
-            return ((UsiClient.IUSIService)(this)).GetCountriesAsync(inValue);
+            return ((Common.ServiceClient.IUSIService)(this)).GetCountriesAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

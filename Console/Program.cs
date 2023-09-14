@@ -1,24 +1,36 @@
-﻿using Common;
+﻿using Common.AusKey;
+using Common.Configuration;
+using Common.Federation;
+using Common.ServiceClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using UsiClient;
+using UsiClient.ServiceClient;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", false)
     .Build();
-
 ServiceCollection serviceCollection = new();
-var serviceProvider = serviceCollection
+serviceCollection
     .AddSingleton<IConfiguration>(configuration)
     .AddTransient<IAusKeyManager, AusKeyManager>()
     .AddTransient<IWSMessageHelper, WSMessageHelper>()
-    .AddTransient<IUSIService, UsiServiceClient>()
-    .AddLogging(config => { config.AddSimpleConsole(); })
-    .BuildServiceProvider();
+    .AddLogging(config => { config.AddSimpleConsole(); });
+if (!Enum.TryParse<ClientMode>(configuration[SettingsKey.Mode], out var clientMode) || clientMode == ClientMode.IssuedToken)
+{
+    serviceCollection.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
+}
+else
+{
+    serviceCollection.AddTransient<IUSIService, IssuerBindingUsiServiceClient>();
+}
+
+var serviceProvider = serviceCollection.BuildServiceProvider();
+
 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
-logger.LogInformation("Running...");
+Console.Clear();
+logger.LogInformation("Running on {0} mode...", clientMode);
 try
 {
     var usiServiceClient = serviceProvider.GetRequiredService<IUSIService>();
