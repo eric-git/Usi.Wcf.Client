@@ -2,6 +2,7 @@
 
 public static class SettingsKey
 {
+    public const string Mode = "mode";
     public const string AtoStsEndpoint = "atoSettings:endpoint";
     public const string TokenLifeTime = "atoSettings:lifetime";
     public const string TokenAppliesTo = "atoSettings:appliesTo";

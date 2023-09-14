@@ -8,7 +8,7 @@
       "System.Collections.Generic.List`1"
     ],
     "namespaceMappings": [
-      "*, UsiClient"
+      "*, Common"
     ],
     "references": [
       "BouncyCastle.Cryptography, {BouncyCastle.Cryptography, 2.2.1}",
