@@ -1,9 +1,9 @@
 ﻿using Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using UsiClient;
+using UsiClient.IssuedToken;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -17,7 +17,7 @@ serviceCollection
     .AddLogging(config => { config.AddSimpleConsole(); });
 if (!Enum.TryParse<ClientMode>(configuration[SettingsKey.Mode], out var clientMode) || clientMode == ClientMode.IssuedToken)
 {
-    serviceCollection.AddTransient<IUSIService, UsiClient.IssuedToken.UsiServiceClient>();
+    serviceCollection.AddTransient<IUSIService, UsiServiceClient>();
 }
 else
 {
