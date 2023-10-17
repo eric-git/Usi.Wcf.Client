@@ -2,7 +2,7 @@ using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
 using System.ServiceModel.Description;
 
-namespace UsiClient.IssuedToken;
+namespace Common.Federation;
 
 public class SamlClientCredentials : ClientCredentials
 {

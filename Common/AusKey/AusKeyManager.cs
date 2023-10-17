@@ -3,36 +3,24 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.Xml.XPath;
+using Common.Configuration;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 
-namespace Common;
+namespace Common.AusKey;
 
 public class AusKeyManager : IAusKeyManager
 {
     private static readonly ConcurrentDictionary<string, X509Certificate2> Certificates = new();
-    private readonly string _ausKeyFileName;
-    private readonly string _ausKeyOrgId;
-    private readonly string _ausKeyPassword;
-    private readonly ILogger<IAusKeyManager> _logger;
+    private readonly IConfiguration _configuration;
 
-    public AusKeyManager(IConfiguration configuration, ILogger<IAusKeyManager> logger)
+    public AusKeyManager(IConfiguration configuration)
     {
-        if (configuration == null)
-        {
-            throw new ArgumentNullException(nameof(configuration));
-        }
-
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _ausKeyFileName = configuration[SettingsKey.AusKeyFileName] ?? throw new ApplicationException();
-        _ausKeyPassword = configuration[SettingsKey.AusKeyPassord] ?? throw new ApplicationException();
-        _ausKeyOrgId = configuration[SettingsKey.AusKeyOrgId] ?? throw new ApplicationException();
+        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     }
 
     public X509Certificate2 GetX509Certificate()
     {
-        _logger.LogInformation("Getting certificate from {0}", _ausKeyFileName);
-        return Certificates.GetOrAdd(_ausKeyOrgId, (x, y) =>
+        return Certificates.GetOrAdd(_configuration[SettingsKey.AusKeyOrgId], (x, y) =>
         {
             XPathDocument xmlDocument = new(y.FileName);
             var xPathNavigator = xmlDocument.CreateNavigator();
@@ -67,8 +55,7 @@ public class AusKeyManager : IAusKeyManager
                 x509Certificate2 = x509Certificate2.CopyWithPrivateKey(rsa);
             }
 
-            _logger.LogInformation("Certificate obtained: {0}", x509Certificate2.Subject);
             return x509Certificate2;
-        }, (FileName: _ausKeyFileName, Password: _ausKeyPassword));
+        }, (FileName: _configuration[SettingsKey.AusKeyFileName], Password: _configuration[SettingsKey.AusKeyPassord]));
     }
 }

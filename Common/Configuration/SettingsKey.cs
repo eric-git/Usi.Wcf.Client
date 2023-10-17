@@ -1,4 +1,4 @@
-﻿namespace Common;
+﻿namespace Common.Configuration;
 
 public static class SettingsKey
 {

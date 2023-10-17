@@ -1,9 +1,11 @@
-﻿using Common;
+﻿using Common.AusKey;
+using Common.Configuration;
+using Common.Federation;
+using Common.ServiceClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using UsiClient;
-using UsiClient.IssuedToken;
+using UsiClient.ServiceClient;
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -17,11 +19,11 @@ serviceCollection
     .AddLogging(config => { config.AddSimpleConsole(); });
 if (!Enum.TryParse<ClientMode>(configuration[SettingsKey.Mode], out var clientMode) || clientMode == ClientMode.IssuedToken)
 {
-    serviceCollection.AddTransient<IUSIService, UsiServiceClient>();
+    serviceCollection.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
 }
 else
 {
-    serviceCollection.AddTransient<IUSIService, UsiClient.IssuerBinding.UsiServiceClient>();
+    serviceCollection.AddTransient<IUSIService, IssuerBindingUsiServiceClient>();
 }
 
 var serviceProvider = serviceCollection.BuildServiceProvider();

@@ -2,7 +2,7 @@ using System.Xml;
 using Microsoft.IdentityModel.Protocols.WsFed;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 
-namespace UsiClient;
+namespace Common.Federation;
 
 public class WSMessageHelper : IWSMessageHelper
 {

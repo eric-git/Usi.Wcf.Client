@@ -1,7 +1,7 @@
 using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
 
-namespace UsiClient.IssuedToken;
+namespace Common.Federation;
 
 public class SamlSecurityTokenProvider : SecurityTokenProvider
 {

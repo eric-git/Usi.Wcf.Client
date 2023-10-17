@@ -3,19 +3,22 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Federation;
 using System.ServiceModel.Security;
-using Common;
+using Common.AusKey;
+using Common.Configuration;
+using Common.Federation;
+using Common.ServiceClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace UsiClient.IssuerBinding;
+namespace UsiClient.ServiceClient;
 
-public class UsiServiceClient : BaseUsiServiceClient
+public class IssuerBindingUsiServiceClient : BaseUsiServiceClient
 {
     private readonly IAusKeyManager _ausKeyManager;
     private readonly IConfiguration _configuration;
     private readonly IWSMessageHelper _wsMessageHelper;
 
-    public UsiServiceClient(
+    public IssuerBindingUsiServiceClient(
         IAusKeyManager ausKeyManager,
         IWSMessageHelper wsMessageHelper,
         IConfiguration configuration,
@@ -28,9 +31,6 @@ public class UsiServiceClient : BaseUsiServiceClient
 
     protected override IUSIService GetChannel()
     {
-        Logger.LogInformation("Setting up USI service channel...");
-
-        // ATO service binding
         WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
         ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
         ws2007HttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
@@ -51,7 +51,6 @@ public class UsiServiceClient : BaseUsiServiceClient
             wsTrustTokenParameters.AdditionalRequestParameters.Add(_wsMessageHelper.GetAppliesToElement(uri));
         }
 
-        // USI service binding
         WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters);
         wsFederationHttpBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
         wsFederationHttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;

@@ -1,7 +1,7 @@
 using System.Xml;
 using Microsoft.IdentityModel.Protocols.WsTrust;
 
-namespace UsiClient;
+namespace Common.Federation;
 
 public interface IWSMessageHelper
 {

@@ -1,7 +1,6 @@
-using Common;
 using Microsoft.Extensions.Logging;
 
-namespace UsiClient;
+namespace Common.ServiceClient;
 
 public abstract class BaseUsiServiceClient : IUSIService
 {
