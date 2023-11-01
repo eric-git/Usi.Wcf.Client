@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Protocols.WsTrust;
 
 namespace Common.Federation;
 
-public interface IWSMessageHelper
+public interface IWsMessageHelper
 {
     XmlElement GetLifeTimeElement(TimeSpan timeSpan);
 

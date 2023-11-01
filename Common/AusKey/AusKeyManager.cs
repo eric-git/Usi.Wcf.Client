@@ -20,7 +20,7 @@ public class AusKeyManager : IAusKeyManager
 
     public X509Certificate2 GetX509Certificate()
     {
-        return Certificates.GetOrAdd(_configuration[SettingsKey.AusKeyOrgId], (x, y) =>
+        return Certificates.GetOrAdd(_configuration[SettingsKey.AusKeyOrgId], static (x, y) =>
         {
             XPathDocument xmlDocument = new(y.FileName);
             var xPathNavigator = xmlDocument.CreateNavigator();
@@ -47,15 +47,13 @@ public class AusKeyManager : IAusKeyManager
 
             X509Certificate2Collection x509Certificate2Collection = new();
             x509Certificate2Collection.Import(Convert.FromBase64String(publicCertificateString));
-            var x509Certificate2 = x509Certificate2Collection.FirstOrDefault(x => x.SubjectName.Name.Contains(abn)) ??
+            var x509Certificate2 = x509Certificate2Collection.FirstOrDefault(c => c.SubjectName.Name != null && c.SubjectName.Name.Contains(abn)) ??
                                    throw new NotSupportedException("The AUSKey file is not valid. The required certificate could not be found.");
-            using (var rsa = RSA.Create())
-            {
-                rsa.ImportEncryptedPkcs8PrivateKey(y.Password, Convert.FromBase64String(privateKeyString), out _);
-                x509Certificate2 = x509Certificate2.CopyWithPrivateKey(rsa);
-            }
+            using var rsa = RSA.Create();
+            rsa.ImportEncryptedPkcs8PrivateKey(y.Password, Convert.FromBase64String(privateKeyString), out _);
+            x509Certificate2 = x509Certificate2.CopyWithPrivateKey(rsa);
 
             return x509Certificate2;
-        }, (FileName: _configuration[SettingsKey.AusKeyFileName], Password: _configuration[SettingsKey.AusKeyPassord]));
+        }, (FileName: _configuration[SettingsKey.AusKeyFileName], Password: _configuration[SettingsKey.AusKeyPassword]));
     }
 }

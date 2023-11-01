@@ -11,7 +11,8 @@ public class SamlClientCredentials : ClientCredentials
         ProofToken = securityToken;
     }
 
-    protected SamlClientCredentials(SamlClientCredentials other) : base(other)
+    protected SamlClientCredentials(SamlClientCredentials other)
+        : base(other)
     {
         ProofToken = other.ProofToken;
     }

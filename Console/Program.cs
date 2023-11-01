@@ -15,7 +15,7 @@ ServiceCollection serviceCollection = new();
 serviceCollection
     .AddSingleton<IConfiguration>(configuration)
     .AddTransient<IAusKeyManager, AusKeyManager>()
-    .AddTransient<IWSMessageHelper, WSMessageHelper>()
+    .AddTransient<IWsMessageHelper, WsMessageHelper>()
     .AddLogging(config => { config.AddSimpleConsole(); });
 if (!Enum.TryParse<ClientMode>(configuration[SettingsKey.Mode], out var clientMode) || clientMode == ClientMode.IssuedToken)
 {

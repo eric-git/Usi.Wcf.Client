@@ -16,13 +16,14 @@ public class IssuerBindingUsiServiceClient : BaseUsiServiceClient
 {
     private readonly IAusKeyManager _ausKeyManager;
     private readonly IConfiguration _configuration;
-    private readonly IWSMessageHelper _wsMessageHelper;
+    private readonly IWsMessageHelper _wsMessageHelper;
 
     public IssuerBindingUsiServiceClient(
         IAusKeyManager ausKeyManager,
-        IWSMessageHelper wsMessageHelper,
+        IWsMessageHelper wsMessageHelper,
         IConfiguration configuration,
-        ILogger<IUSIService> logger) : base(logger)
+        ILogger<IUSIService> logger)
+        : base(logger)
     {
         _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
         _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
@@ -51,11 +52,19 @@ public class IssuerBindingUsiServiceClient : BaseUsiServiceClient
             wsTrustTokenParameters.AdditionalRequestParameters.Add(_wsMessageHelper.GetAppliesToElement(uri));
         }
 
-        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters);
-        wsFederationHttpBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
-        wsFederationHttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
-        wsFederationHttpBinding.Security.Message.EstablishSecurityContext = false;
-        wsFederationHttpBinding.Security.Message.NegotiateServiceCredential = false;
+        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters)
+        {
+            Security =
+            {
+                Mode = SecurityMode.TransportWithMessageCredential,
+                Message =
+                {
+                    ClientCredentialType = MessageCredentialType.Certificate,
+                    EstablishSecurityContext = false,
+                    NegotiateServiceCredential = false
+                }
+            }
+        };
         ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(_configuration[SettingsKey.UsiServiceEndpoint]));
         var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
         clientCredentials.ClientCertificate.Certificate = _ausKeyManager.GetX509Certificate();

@@ -15,15 +15,16 @@ namespace UsiClient.ServiceClient;
 
 public class IssuedTokenUsiServiceClient : BaseUsiServiceClient
 {
-    private static SecurityToken SecurityToken;
+    private static SecurityToken _securityToken;
     private readonly IAusKeyManager _ausKeyManager;
     private readonly IConfiguration _configuration;
-    private readonly IWSMessageHelper _wsMessageHelper;
+    private readonly IWsMessageHelper _wsMessageHelper;
 
     public IssuedTokenUsiServiceClient(IAusKeyManager ausKeyManager,
-        IWSMessageHelper wsMessageHelper,
+        IWsMessageHelper wsMessageHelper,
         IConfiguration configuration,
-        ILogger<IUSIService> logger) : base(logger)
+        ILogger<IUSIService> logger)
+        : base(logger)
     {
         _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
         _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
@@ -34,7 +35,7 @@ public class IssuedTokenUsiServiceClient : BaseUsiServiceClient
     {
         var now = DateTime.UtcNow;
         WSTrustTokenParameters wsTrustTokenParameters;
-        if (SecurityToken == null || SecurityToken.ValidFrom > now || SecurityToken.ValidTo <= now)
+        if (_securityToken == null || _securityToken.ValidFrom > now || _securityToken.ValidTo <= now)
         {
             WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
             ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
@@ -67,7 +68,7 @@ public class IssuedTokenUsiServiceClient : BaseUsiServiceClient
             securityTokenRequirement.Properties[$"{prefix}/IssuedSecurityTokenParameters"] = wsTrustTokenParameters;
             if (!Uri.TryCreate(_configuration[SettingsKey.TokenAppliesTo], UriKind.Absolute, out var appliesToUrl))
             {
-                appliesToUrl = new Uri(_configuration[SettingsKey.UsiServiceEndpoint]);
+                appliesToUrl = new Uri(_configuration[SettingsKey.UsiServiceEndpoint] ?? throw new InvalidOperationException());
             }
 
             securityTokenRequirement.Properties[$"{prefix}/TargetAddress"] = new EndpointAddress(appliesToUrl);
@@ -75,22 +76,30 @@ public class IssuedTokenUsiServiceClient : BaseUsiServiceClient
             var securityTokenProvider = securityTokenManager.CreateSecurityTokenProvider(securityTokenRequirement);
             ((ICommunicationObject)securityTokenProvider).Open();
             Logger.LogInformation("Getting token from {0} for {1}...", _configuration[SettingsKey.AtoStsEndpoint], appliesToUrl);
-            SecurityToken = securityTokenProvider.GetToken(TimeSpan.FromMinutes(2));
-            Logger.LogInformation("Security token obatined. It's valid from {0} to {1} of type {2}.", SecurityToken.ValidFrom, SecurityToken.ValidTo, SecurityToken.GetType().Name);
+            _securityToken = securityTokenProvider.GetToken(TimeSpan.FromMinutes(2));
+            Logger.LogInformation("Security token obtained. It's valid from {0} to {1} of type {2}.", _securityToken.ValidFrom, _securityToken.ValidTo, _securityToken.GetType().Name);
         }
 
         wsTrustTokenParameters = new WSTrustTokenParameters
         {
             TokenType = "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0"
         };
-        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters);
-        wsFederationHttpBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
-        wsFederationHttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
-        wsFederationHttpBinding.Security.Message.EstablishSecurityContext = false;
-        wsFederationHttpBinding.Security.Message.NegotiateServiceCredential = false;
+        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters)
+        {
+            Security =
+            {
+                Mode = SecurityMode.TransportWithMessageCredential,
+                Message =
+                {
+                    ClientCredentialType = MessageCredentialType.Certificate,
+                    EstablishSecurityContext = false,
+                    NegotiateServiceCredential = false
+                }
+            }
+        };
         ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(_configuration[SettingsKey.UsiServiceEndpoint]));
         channelFactory.Endpoint.EndpointBehaviors.Remove(typeof(ClientCredentials));
-        SamlClientCredentials samlClientCredentials = new(SecurityToken)
+        SamlClientCredentials samlClientCredentials = new(_securityToken)
         {
             ClientCertificate =
             {
