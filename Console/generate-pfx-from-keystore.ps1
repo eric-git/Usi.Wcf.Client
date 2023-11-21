@@ -1,12 +1,43 @@
-# Generate pfx file from AUSKey file
+<#
+    .SYNOPSIS
+    Generates a pfx file from the AUSKey file.
+
+    .DESCRIPTION
+    Generates a pfx certificate file from the AUSKey file based on the provided orgaisation credential name.
+    The pfx file will be located under the same folder of this module. The file name is the credential name.
+
+    .PARAMETER file
+    Specifies the path to the AUSKey file, the default is .\keystore-usi.xml.
+
+    .PARAMETER name
+    Specifies the organisation credential name, the default is USIMachine.
+
+    .PARAMETER password
+    Specifies the password of the AUSKey file, the default is Password1!.
+
+    .INPUTS
+    None. You cannot pipe objects to this module.
+
+    .OUTPUTS
+    A pfx file contains a private key.
+
+    .EXAMPLE
+    .\generate-pfx-from-keystore.ps1
+
+    .EXAMPLE
+    .\generate-pfx-from-keystore.ps1 -file .\test.xml -name OrgOne -password Password123!
+
+    .LINK
+    https://github.com/eric-git/Usi.Wcf.Client
+#>
 param (
-    [string] $auskeyFile = 'keystore-usi.xml',
+    [string] $file = '.\keystore-usi.xml',
     [string] $name = 'USIMachine',
     [string] $password = 'Password1!'
 )
 $ErrorActionPreference = 'Stop'
-$auskeyFile = "$pwd\$auskeyFile"
-$xmlDocument = [System.Xml.XPath.XPathDocument]::new($auskeyFile)
+$file = Resolve-Path $file
+$xmlDocument = [System.Xml.XPath.XPathDocument]::new($file)
 $xPathNavigator = $xmlDocument.CreateNavigator()
 $ns = [System.Xml.XmlNamespaceManager]::new($xPathNavigator.NameTable)
 $ns.AddNamespace('store', 'http://auth.abr.gov.au/credential/xsd/SBRCredentialStore')
@@ -42,4 +73,4 @@ $data = $x509Certificate2.Export([System.Security.Cryptography.X509Certificates.
 $pfxFileName = "$pwd\$name.pfx"
 [System.IO.File]::WriteAllBytes($pfxFileName, $data)
 
-Write-Host "Generated $pfxFileName"
+Write-Host "File $pfxFileName has been successfully generated."
