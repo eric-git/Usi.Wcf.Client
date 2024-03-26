@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Protocols.WsTrust;
 
 namespace Common.Federation;
 
-public class WSMessageHelper : IWSMessageHelper
+public class WsMessageHelper : IWsMessageHelper
 {
     private const string WSA = "http://www.w3.org/2005/08/addressing";
     private const string WSP = "http://schemas.xmlsoap.org/ws/2004/09/policy";

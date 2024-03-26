@@ -12,22 +12,15 @@ using Microsoft.Extensions.Logging;
 
 namespace UsiClient.ServiceClient;
 
-public class IssuerBindingUsiServiceClient : BaseUsiServiceClient
-{
-    private readonly IAusKeyManager _ausKeyManager;
-    private readonly IConfiguration _configuration;
-    private readonly IWSMessageHelper _wsMessageHelper;
-
-    public IssuerBindingUsiServiceClient(
-        IAusKeyManager ausKeyManager,
-        IWSMessageHelper wsMessageHelper,
+public class IssuerBindingUsiServiceClient(IAusKeyManager ausKeyManager,
+        IWsMessageHelper wsMessageHelper,
         IConfiguration configuration,
-        ILogger<IUSIService> logger) : base(logger)
-    {
-        _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
-        _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
-        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-    }
+        ILogger<IUSIService> logger)
+    : BaseUsiServiceClient(logger)
+{
+    private readonly IAusKeyManager _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
+    private readonly IConfiguration _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+    private readonly IWsMessageHelper _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
 
     protected override IUSIService GetChannel()
     {
@@ -51,11 +44,19 @@ public class IssuerBindingUsiServiceClient : BaseUsiServiceClient
             wsTrustTokenParameters.AdditionalRequestParameters.Add(_wsMessageHelper.GetAppliesToElement(uri));
         }
 
-        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters);
-        wsFederationHttpBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
-        wsFederationHttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
-        wsFederationHttpBinding.Security.Message.EstablishSecurityContext = false;
-        wsFederationHttpBinding.Security.Message.NegotiateServiceCredential = false;
+        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters)
+        {
+            Security =
+            {
+                Mode = SecurityMode.TransportWithMessageCredential,
+                Message =
+                {
+                    ClientCredentialType = MessageCredentialType.Certificate,
+                    EstablishSecurityContext = false,
+                    NegotiateServiceCredential = false
+                }
+            }
+        };
         ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(_configuration[SettingsKey.UsiServiceEndpoint]));
         var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
         clientCredentials.ClientCertificate.Certificate = _ausKeyManager.GetX509Certificate();

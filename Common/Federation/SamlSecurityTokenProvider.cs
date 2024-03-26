@@ -3,17 +3,10 @@ using System.IdentityModel.Tokens;
 
 namespace Common.Federation;
 
-public class SamlSecurityTokenProvider : SecurityTokenProvider
+public class SamlSecurityTokenProvider(SecurityToken securityToken) : SecurityTokenProvider
 {
-    private readonly SecurityToken _securityToken;
-
-    public SamlSecurityTokenProvider(SecurityToken securityToken)
-    {
-        _securityToken = securityToken;
-    }
-
     protected override SecurityToken GetTokenCore(TimeSpan timeout)
     {
-        return _securityToken;
+        return securityToken;
     }
 }

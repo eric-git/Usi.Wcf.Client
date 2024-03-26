@@ -2,14 +2,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Common.ServiceClient;
 
-public abstract class BaseUsiServiceClient : IUSIService
+public abstract class BaseUsiServiceClient(ILogger<IUSIService> logger) : IUSIService
 {
-    protected BaseUsiServiceClient(ILogger<IUSIService> logger)
-    {
-        Logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
-
-    protected ILogger<IUSIService> Logger { get; }
+    protected ILogger<IUSIService> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
 
     public async Task<BulkUploadResponse> BulkUploadAsync(BulkUploadRequest request)
     {
