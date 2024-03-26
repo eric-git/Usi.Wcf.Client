@@ -13,23 +13,16 @@ using Microsoft.Extensions.Logging;
 
 namespace UsiClient.ServiceClient;
 
-public class IssuedTokenUsiServiceClient : BaseUsiServiceClient
-{
-    private static SecurityToken _securityToken;
-    private readonly IAusKeyManager _ausKeyManager;
-    private readonly IConfiguration _configuration;
-    private readonly IWsMessageHelper _wsMessageHelper;
-
-    public IssuedTokenUsiServiceClient(IAusKeyManager ausKeyManager,
+public class IssuedTokenUsiServiceClient(IAusKeyManager ausKeyManager,
         IWsMessageHelper wsMessageHelper,
         IConfiguration configuration,
         ILogger<IUSIService> logger)
-        : base(logger)
-    {
-        _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
-        _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
-        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-    }
+    : BaseUsiServiceClient(logger)
+{
+    private static SecurityToken _securityToken;
+    private readonly IAusKeyManager _ausKeyManager = ausKeyManager ?? throw new ArgumentNullException(nameof(ausKeyManager));
+    private readonly IConfiguration _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+    private readonly IWsMessageHelper _wsMessageHelper = wsMessageHelper ?? throw new ArgumentNullException(nameof(wsMessageHelper));
 
     protected override IUSIService GetChannel()
     {

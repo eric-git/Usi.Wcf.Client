@@ -8,15 +8,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace Common.AusKey;
 
-public class AusKeyManager : IAusKeyManager
+public class AusKeyManager(IConfiguration configuration) : IAusKeyManager
 {
     private static readonly ConcurrentDictionary<string, X509Certificate2> Certificates = new();
-    private readonly IConfiguration _configuration;
-
-    public AusKeyManager(IConfiguration configuration)
-    {
-        _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-    }
+    private readonly IConfiguration _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 
     public X509Certificate2 GetX509Certificate()
     {
