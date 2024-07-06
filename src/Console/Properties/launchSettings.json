@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "IssuerBinding Mode": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ClientMode": "IssuerBinding"
+      }
+    },
+    "IssuedToken Mode": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ClientMode": "IssuedToken"
+      }
+    }
+  }
+}
