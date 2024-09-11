@@ -19,4 +19,6 @@ public static class SettingsKey
     public const string UsiServiceEndpoint = "usiSettings:endpoint";
     
     public const string UsiOrgCode = "usiSettings:code";
+
+    public const string ActAs = "atoSettings:actAs";
 }

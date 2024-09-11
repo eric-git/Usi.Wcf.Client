@@ -10,9 +10,9 @@ namespace Common.AusKey;
 
 public class AusKeyManager(IConfiguration configuration) : IAusKeyManager
 {
-    private static readonly ConcurrentDictionary<string, X509Certificate2> Certificates = new();
+    private static readonly ConcurrentDictionary<string, (string, X509Certificate2)> Certificates = new();
 
-    public X509Certificate2 GetX509Certificate() =>
+    public (string, X509Certificate2) GetX509CertificateData() =>
      Certificates.GetOrAdd(configuration[SettingsKey.AusKeyOrgId] ?? throw new ApplicationException(), static (x, y) =>
     {
         XPathDocument xmlDocument = new(y.FileName ?? throw new ApplicationException());
@@ -46,6 +46,6 @@ public class AusKeyManager(IConfiguration configuration) : IAusKeyManager
         rsa.ImportEncryptedPkcs8PrivateKey(y.Password, Convert.FromBase64String(privateKeyString), out _);
         x509Certificate2 = x509Certificate2.CopyWithPrivateKey(rsa);
 
-        return x509Certificate2;
+        return (abn, x509Certificate2);
     }, (FileName: configuration[SettingsKey.AusKeyFileName], Password: configuration[SettingsKey.AusKeyPassword]));
 }

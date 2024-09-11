@@ -20,6 +20,7 @@ public class IssuerBindingUsiServiceClient(
 {
     protected override IUSIService GetChannel()
     {
+        var (abn, certificate) = ausKeyManager.GetX509CertificateData();
         WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
         ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
         ws2007HttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
@@ -33,6 +34,12 @@ public class IssuerBindingUsiServiceClient(
         {
             wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetLifeTimeElement(timeSpan));
             wsTrustTokenParameters.MaxIssuedTokenCachingTime = timeSpan;
+        }
+
+        var actAs = configuration[SettingsKey.ActAs];
+        if (!string.IsNullOrWhiteSpace(actAs))
+        {
+            wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetActAsElement(abn, actAs));
         }
 
         if (Uri.TryCreate(configuration[SettingsKey.TokenAppliesTo], UriKind.Absolute, out var uri))
@@ -55,7 +62,7 @@ public class IssuerBindingUsiServiceClient(
         };
         ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
         var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
-        clientCredentials.ClientCertificate.Certificate = ausKeyManager.GetX509Certificate();
+        clientCredentials.ClientCertificate.Certificate = certificate;
         return channelFactory.CreateChannel();
     }
 }
