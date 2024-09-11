@@ -4,5 +4,5 @@ namespace Common.AusKey;
 
 public interface IAusKeyManager
 {
-    X509Certificate2 GetX509Certificate();
+    (string, X509Certificate2) GetX509CertificateData();
 }

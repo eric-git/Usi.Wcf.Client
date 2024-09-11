@@ -25,6 +25,7 @@ public class IssuedTokenUsiServiceClient(
     {
         var now = DateTime.UtcNow;
         WSTrustTokenParameters wsTrustTokenParameters;
+        var (abn, certificate) = ausKeyManager.GetX509CertificateData();
         if (s_securityToken == null || s_securityToken.ValidFrom > now || s_securityToken.ValidTo <= now)
         {
             WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
@@ -41,11 +42,17 @@ public class IssuedTokenUsiServiceClient(
                 wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetLifeTimeElement(timeSpan));
             }
 
+            var actAs = configuration[SettingsKey.ActAs];
+            if (!string.IsNullOrWhiteSpace(actAs))
+            {
+                wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetActAsElement(abn, actAs));
+            }
+
             ClientCredentials clientCredentials = new()
             {
                 ClientCertificate =
                 {
-                    Certificate = ausKeyManager.GetX509Certificate()
+                    Certificate = certificate
                 }
             };
             WSTrustChannelClientCredentials wsTrustChannelClientCredentials = new(clientCredentials);
@@ -93,7 +100,7 @@ public class IssuedTokenUsiServiceClient(
         {
             ClientCertificate =
             {
-                Certificate = ausKeyManager.GetX509Certificate()
+                Certificate = certificate
             }
         };
         channelFactory.Endpoint.EndpointBehaviors.Add(samlClientCredentials);

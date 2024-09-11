@@ -14,7 +14,7 @@ public static class UsiClientExtensions
         services
             .AddTransient<IAusKeyManager, AusKeyManager>()
             .AddTransient<IWsMessageHelper, WsMessageHelper>();
-        if (!Enum.TryParse(configuration[SettingsKey.Mode], out ClientMode clientMode) || clientMode == ClientMode.IssuedToken)
+        if (Enum.TryParse(configuration[SettingsKey.Mode], true, out ClientMode clientMode) && clientMode == ClientMode.IssuedToken)
         {
             services.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
         }

@@ -11,6 +11,13 @@ There are 2 modes supported:
 
 See **appsettings.json** and **launchSettings.json** for details. The "IssuerBinding" mode is recommended.
 
+## Testing accounts
+
+There are 2 testing accounts used:
+
+-   VA1802: this is an example for "ActAs", the first party is: 11000002568, the second is: 96312011219
+-   VA1803: this is an example suits most of the simple cases
+
 ## Operations
 
 This example invokes the following WCF operations for demo

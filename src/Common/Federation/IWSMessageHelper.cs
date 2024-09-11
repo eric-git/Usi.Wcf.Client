@@ -10,4 +10,6 @@ public interface IWsMessageHelper
     XmlElement GetAppliesToElement(Uri endpointAddress);
 
     Claims GetRequiredClaimTypes();
+
+    XmlElement GetActAsElement(string firstPartyAbn, string secondPartyAbn);
 }
