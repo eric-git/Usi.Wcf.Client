@@ -10,7 +10,7 @@
             "args": [],
             "cwd": "${workspaceFolder}/src/Console",
             "launchSettingsFilePath": "${workspaceFolder}/src/Console/Properties/launchSettings.json",
-            "launchSettingsProfile": "2.1 IssuerBinding Mode (VA1803)",
+            "launchSettingsProfile": "1.1 IssuerBinding Mode (VA1803)",
             "console": "externalTerminal",
             "stopAtEntry": false
         },

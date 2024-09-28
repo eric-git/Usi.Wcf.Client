@@ -8,36 +8,23 @@ using Microsoft.Extensions.Logging;
 using UsiClient;
 
 var hostApplicationBuilder = Host.CreateApplicationBuilder();
-if (!Enum.TryParse<ClientMode>(hostApplicationBuilder.Configuration[SettingsKey.Mode], true, out var clientMode) &&
-    !Enum.TryParse(Environment.GetEnvironmentVariable("ClientMode"), true, out clientMode))
-{
-    clientMode = default;
-}
-
-hostApplicationBuilder.Configuration[SettingsKey.Mode] = clientMode.ToString();
-hostApplicationBuilder.Services.AddUsiClient(hostApplicationBuilder.Configuration);
+hostApplicationBuilder.Services.AddUsiClient(hostApplicationBuilder.Configuration, out var clientMode);
 hostApplicationBuilder.Build();
 
 var serviceProvider = hostApplicationBuilder.Services.BuildServiceProvider();
 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 Console.Clear();
-logger.LogInformation("Client mode: {mode}", clientMode);
-var usiServiceClient = serviceProvider.GetRequiredService<IUSIService>();
 var orgCode = hostApplicationBuilder.Configuration[SettingsKey.UsiOrgCode] ?? throw new ApplicationException();
-JsonSerializerOptions jsonSerializerOptions = new()
-{
-    WriteIndented = true,
-};
+logger.LogInformation("Client mode: {mode}, Organisation code: {orgCode}", clientMode, orgCode);
+var usiServiceClient = serviceProvider.GetRequiredService<IUSIService>();
+JsonSerializerOptions jsonSerializerOptions = new() { WriteIndented = true };
 jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 const int maxRecords = 3;
 
 logger.LogInformation("Invoking {operation}, the top {maxRecords} country data records will be displayed...", nameof(IUSIService.GetCountriesAsync), maxRecords);
 GetCountriesRequest getCountriesRequest = new()
 {
-    GetCountries = new()
-    {
-        OrgCode = orgCode
-    }
+    GetCountries = new GetCountriesType { OrgCode = orgCode }
 };
 var getCountriesResponse = usiServiceClient.GetCountriesAsync(getCountriesRequest).Result;
 Console.WriteLine();
@@ -45,7 +32,8 @@ Console.WriteLine(JsonSerializer.Serialize(getCountriesResponse.GetCountriesResp
 Console.WriteLine();
 
 logger.LogInformation("Invoking {operation}, the top {maxRecords} USI verification data records will be displayed...", nameof(IUSIService.BulkVerifyUSIAsync), maxRecords);
-VerificationType[] records = [
+VerificationType[] records =
+[
     new()
     {
         RecordId = 1,
@@ -71,18 +59,18 @@ VerificationType[] records = [
         ItemsElementName = [ItemsChoiceType1.SingleName]
     }
 ];
-BulkVerifyUSIRequest bulkVerifyUSIRequest = new()
+BulkVerifyUSIRequest bulkVerifyUsiRequest = new()
 {
-    BulkVerifyUSI = new()
+    BulkVerifyUSI = new BulkVerifyUSIType
     {
         OrgCode = orgCode,
         NoOfVerifications = records.Length,
         Verifications = records
     }
 };
-var bulkVerifyUSIResponse = usiServiceClient.BulkVerifyUSIAsync(bulkVerifyUSIRequest).Result;
+var bulkVerifyUsiResponse = usiServiceClient.BulkVerifyUSIAsync(bulkVerifyUsiRequest).Result;
 Console.WriteLine();
-Console.WriteLine(JsonSerializer.Serialize(bulkVerifyUSIResponse.BulkVerifyUSIResponse1.VerificationResponses.Take(maxRecords), jsonSerializerOptions));
+Console.WriteLine(JsonSerializer.Serialize(bulkVerifyUsiResponse.BulkVerifyUSIResponse1.VerificationResponses.Take(maxRecords), jsonSerializerOptions));
 Console.WriteLine();
 
 Console.WriteLine("Press enter to exit...");

@@ -4,48 +4,46 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Federation;
 using System.ServiceModel.Security;
-using Common.AusKey;
 using Common.Configuration;
 using Common.Federation;
+using Common.Keystore;
+using Common.Logging;
 using Common.ServiceClient;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace UsiClient;
 
 public class IssuedTokenUsiServiceClient(
-    IAusKeyManager ausKeyManager,
-    IWsMessageHelper wsMessageHelper,
+    IKeystoreManager keystoreManager,
     IConfiguration configuration,
+    IMemoryCache memoryCache,
     ILogger<IUSIService> logger) : BaseUsiServiceClient(logger)
 {
-    private static SecurityToken? s_securityToken;
-
     protected override IUSIService GetChannel()
     {
-        var now = DateTime.UtcNow;
-        WSTrustTokenParameters wsTrustTokenParameters;
-        var (abn, certificate) = ausKeyManager.GetX509CertificateData();
-        if (s_securityToken == null || s_securityToken.ValidFrom > now || s_securityToken.ValidTo <= now)
+        var (abn, certificate) = keystoreManager.GetX509CertificateData();
+        var securityToken = memoryCache.GetOrCreate($"ST-{abn}", cacheEntry =>
         {
             WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
             ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
             ws2007HttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
             ws2007HttpBinding.Security.Message.EstablishSecurityContext = false;
             ws2007HttpBinding.Security.Message.NegotiateServiceCredential = false;
-            wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
+            var wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
             wsTrustTokenParameters.KeyType = SecurityKeyType.SymmetricKey;
-            wsTrustTokenParameters.Claims = wsMessageHelper.GetRequiredClaimTypes();
+            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes();
             wsTrustTokenParameters.CacheIssuedTokens = false;
             if (TimeSpan.TryParse(configuration[SettingsKey.TokenLifeTime], out TimeSpan timeSpan))
             {
-                wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetLifeTimeElement(timeSpan));
+                wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetLifeTimeElement(timeSpan));
             }
 
             var actAs = configuration[SettingsKey.ActAs];
             if (!string.IsNullOrWhiteSpace(actAs))
             {
-                wsTrustTokenParameters.AdditionalRequestParameters.Add(wsMessageHelper.GetActAsElement(abn, actAs));
+                wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetActAsElement(abn, actAs));
             }
 
             ClientCredentials clientCredentials = new()
@@ -73,11 +71,13 @@ public class IssuedTokenUsiServiceClient(
             var securityTokenProvider = securityTokenManager.CreateSecurityTokenProvider(securityTokenRequirement);
             ((ICommunicationObject)securityTokenProvider).Open();
             Logger.LogDebug("Getting token from {endpoint} for {appliesTo}...", configuration[SettingsKey.AtoStsEndpoint], appliesToUrl);
-            s_securityToken = securityTokenProvider.GetToken(TimeSpan.FromMinutes(2));
-            Logger.LogDebug("Security token obtained. It's valid from {from} (UTC) to {to} (UTC) of type {name}.", s_securityToken.ValidFrom, s_securityToken.ValidTo, s_securityToken.GetType().Name);
-        }
+            var stsToken = securityTokenProvider.GetToken(TimeSpan.FromMinutes(2));
+            Logger.LogDebug("Security token obtained. It's valid from {from} (UTC) to {to} (UTC) of type {name}.", stsToken.ValidFrom, stsToken.ValidTo, stsToken.GetType().Name);
+            cacheEntry.AbsoluteExpiration = stsToken.ValidTo.AddSeconds(-30);
+            return stsToken;
+        }) ?? throw new UnauthorizedAccessException();
 
-        wsTrustTokenParameters = new WSTrustTokenParameters
+        WSTrustTokenParameters wsTrustTokenParameters = new()
         {
             TokenType = "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0"
         };
@@ -96,7 +96,7 @@ public class IssuedTokenUsiServiceClient(
         };
         ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
         channelFactory.Endpoint.EndpointBehaviors.Remove(typeof(ClientCredentials));
-        SamlClientCredentials samlClientCredentials = new(s_securityToken)
+        SamlClientCredentials samlClientCredentials = new(securityToken)
         {
             ClientCertificate =
             {
@@ -104,6 +104,7 @@ public class IssuedTokenUsiServiceClient(
             }
         };
         channelFactory.Endpoint.EndpointBehaviors.Add(samlClientCredentials);
+        channelFactory.Endpoint.EndpointBehaviors.Add(new UsiServiceClientEndpointBehavior(Logger));
         return channelFactory.CreateChannel();
     }
 }
