@@ -9,7 +9,7 @@ There are 2 modes supported:
 -   IssuedToken: manually call the STS service to obtain the security token
 -   IssuerBinding: use nested configuration, the built-in channel calls the STS service to obtain the security token
 
-See **appsettings.json** and **launchSettings.json** for details. The "IssuerBinding" mode is recommended.
+See **appsettings.json** and **launchSettings.json** for details.
 
 ## Testing accounts
 

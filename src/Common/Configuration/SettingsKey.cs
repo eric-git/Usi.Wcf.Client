@@ -10,11 +10,11 @@ public static class SettingsKey
 
     public const string TokenAppliesTo = "atoSettings:appliesTo";
 
-    public const string AusKeyFileName = "atoSettings:file";
+    public const string KeystoreFileName = "atoSettings:file";
 
-    public const string AusKeyPassword = "atoSettings:password";
+    public const string KeystorePassword = "atoSettings:password";
 
-    public const string AusKeyOrgId = "atoSettings:id";
+    public const string KeystoreClientCredentialId = "atoSettings:id";
 
     public const string UsiServiceEndpoint = "usiSettings:endpoint";
     

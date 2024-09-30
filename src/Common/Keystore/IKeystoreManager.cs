@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace Common.AusKey;
+namespace Common.Keystore;
 
-public interface IAusKeyManager
+public interface IKeystoreManager
 {
     (string, X509Certificate2) GetX509CertificateData();
 }
