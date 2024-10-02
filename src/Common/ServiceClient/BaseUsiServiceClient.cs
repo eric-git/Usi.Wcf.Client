@@ -2,79 +2,23 @@ using Microsoft.Extensions.Logging;
 
 namespace Common.ServiceClient;
 
-public abstract class BaseUsiServiceClient(ILogger<IUSIService> logger) : IUSIService
+public abstract class BaseUsiServiceClient(ILogger<IUsiService> logger) : IUsiService
 {
-    protected ILogger<IUSIService> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
+    protected ILogger<IUsiService> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
 
-    public async Task<BulkUploadResponse> BulkUploadAsync(BulkUploadRequest request)
+    public async Task<EchoResponse> EchoAsync(EchoRequest request)
     {
-        Logger.LogDebug("Calling {operation}...", nameof(BulkUploadAsync));
+        Logger.LogDebug("Calling {operation}...", nameof(EchoAsync));
         var usiServiceClient = GetChannel();
-        return await usiServiceClient.BulkUploadAsync(request);
+        return await usiServiceClient.EchoAsync(request);
     }
 
-    public async Task<BulkVerifyUSIResponse> BulkVerifyUSIAsync(BulkVerifyUSIRequest request)
+    public async Task<FuzzySearchResponse> FuzzyAsync(FuzzySearchRequest request)
     {
-        Logger.LogDebug("Calling {operation}...", nameof(BulkVerifyUSIAsync));
+        Logger.LogDebug("Calling {operation}...", nameof(FuzzyAsync));
         var usiServiceClient = GetChannel();
-        return await usiServiceClient.BulkVerifyUSIAsync(request);
+        return await usiServiceClient.FuzzyAsync(request);
     }
 
-    public async Task<VerifyUSIResponse> VerifyUSIAsync(VerifyUSIRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(VerifyUSIAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.VerifyUSIAsync(request);
-    }
-
-    public async Task<BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(BulkUploadRetrieveRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(BulkUploadRetrieveAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.BulkUploadRetrieveAsync(request);
-    }
-
-    public async Task<CreateUSIResponse> CreateUSIAsync(CreateUSIRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(CreateUSIAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.CreateUSIAsync(request);
-    }
-
-    public async Task<GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(GetNonDvsDocumentTypesRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(GetNonDvsDocumentTypesAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.GetNonDvsDocumentTypesAsync(request);
-    }
-
-    public async Task<UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(UpdateUSIContactDetailsRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(UpdateUSIContactDetailsAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.UpdateUSIContactDetailsAsync(request);
-    }
-
-    public async Task<UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(UpdateUSIPersonalDetailsRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(UpdateUSIPersonalDetailsAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.UpdateUSIPersonalDetailsAsync(request);
-    }
-
-    public async Task<LocateUSIResponse> LocateUSIAsync(LocateUSIRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(LocateUSIAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.LocateUSIAsync(request);
-    }
-
-    public async Task<GetCountriesResponse> GetCountriesAsync(GetCountriesRequest request)
-    {
-        Logger.LogDebug("Calling {operation}...", nameof(GetCountriesAsync));
-        var usiServiceClient = GetChannel();
-        return await usiServiceClient.GetCountriesAsync(request);
-    }
-
-    protected abstract IUSIService GetChannel();
+    protected abstract IUsiService GetChannel();
 }

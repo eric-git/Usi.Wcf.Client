@@ -16,9 +16,9 @@ namespace UsiClient;
 public class IssuerBindingUsiServiceClient(
     IKeystoreManager keystoreManager,
     IConfiguration configuration,
-    ILogger<IUSIService> logger) : BaseUsiServiceClient(logger)
+    ILogger<IUsiService> logger) : BaseUsiServiceClient(logger)
 {
-    protected override IUSIService GetChannel()
+    protected override IUsiService GetChannel()
     {
         var (abn, certificate) = keystoreManager.GetX509CertificateData();
         WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
@@ -60,7 +60,7 @@ public class IssuerBindingUsiServiceClient(
                 }
             }
         };
-        ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
+        ChannelFactory<IUsiService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
         var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
         clientCredentials.ClientCertificate.Certificate = certificate;
         channelFactory.Endpoint.EndpointBehaviors.Add(new UsiServiceClientEndpointBehavior(Logger));

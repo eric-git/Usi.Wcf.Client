@@ -19,9 +19,9 @@ public class IssuedTokenUsiServiceClient(
     IKeystoreManager keystoreManager,
     IConfiguration configuration,
     IMemoryCache memoryCache,
-    ILogger<IUSIService> logger) : BaseUsiServiceClient(logger)
+    ILogger<IUsiService> logger) : BaseUsiServiceClient(logger)
 {
-    protected override IUSIService GetChannel()
+    protected override IUsiService GetChannel()
     {
         var (abn, certificate) = keystoreManager.GetX509CertificateData();
         var securityToken = memoryCache.GetOrCreate($"ST-{abn}", cacheEntry =>
@@ -94,7 +94,7 @@ public class IssuedTokenUsiServiceClient(
                 }
             }
         };
-        ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
+        ChannelFactory<IUsiService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
         channelFactory.Endpoint.EndpointBehaviors.Remove(typeof(ClientCredentials));
         SamlClientCredentials samlClientCredentials = new(securityToken)
         {

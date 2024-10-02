@@ -16,62 +16,75 @@ var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 Console.Clear();
 var orgCode = hostApplicationBuilder.Configuration[SettingsKey.UsiOrgCode] ?? throw new ApplicationException();
 logger.LogInformation("Client mode: {mode}, Organisation code: {orgCode}", clientMode, orgCode);
-var usiServiceClient = serviceProvider.GetRequiredService<IUSIService>();
+var usiServiceClient = serviceProvider.GetRequiredService<IUsiService>();
 JsonSerializerOptions jsonSerializerOptions = new() { WriteIndented = true };
 jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-const int maxRecords = 3;
 
-logger.LogInformation("Invoking {operation}, the top {maxRecords} country data records will be displayed...", nameof(IUSIService.GetCountriesAsync), maxRecords);
-GetCountriesRequest getCountriesRequest = new()
+Console.WriteLine();
+EchoRequest echoRequest = new()
 {
-    GetCountries = new GetCountriesType { OrgCode = orgCode }
+    OrgCode = orgCode
 };
-var getCountriesResponse = usiServiceClient.GetCountriesAsync(getCountriesRequest).Result;
-Console.WriteLine();
-Console.WriteLine(JsonSerializer.Serialize(getCountriesResponse.GetCountriesResponse1.Countries.Take(maxRecords), jsonSerializerOptions));
-Console.WriteLine();
-
-logger.LogInformation("Invoking {operation}, the top {maxRecords} USI verification data records will be displayed...", nameof(IUSIService.BulkVerifyUSIAsync), maxRecords);
-VerificationType[] records =
-[
-    new()
-    {
-        RecordId = 1,
-        USI = "XNY5NV9WG9",
-        DateOfBirth = DateTime.Parse("2022-06-07"),
-        Items = ["Amy"],
-        ItemsElementName = [ItemsChoiceType1.SingleName]
-    },
-    new()
-    {
-        RecordId = 2,
-        USI = "HQ9HHNJC3J",
-        DateOfBirth = DateTime.Parse("1986-04-22"),
-        Items = ["BERT", "ZYWIEC"],
-        ItemsElementName = [ItemsChoiceType1.FirstName, ItemsChoiceType1.FamilyName]
-    },
-    new()
-    {
-        RecordId = 3,
-        USI = "XNY5NV9WG8",
-        DateOfBirth = DateTime.Parse("2022-06-07"),
-        Items = ["Amy"],
-        ItemsElementName = [ItemsChoiceType1.SingleName]
-    }
-];
-BulkVerifyUSIRequest bulkVerifyUsiRequest = new()
+EchoResponse? echoResponse;
+try
 {
-    BulkVerifyUSI = new BulkVerifyUSIType
+    echoResponse = usiServiceClient.EchoAsync(echoRequest).Result;
+}
+catch (AggregateException aggregateException)
+{
+    echoResponse = null;
+    var flattened = aggregateException.Flatten();
+    foreach (var item in flattened.InnerExceptions)
     {
-        OrgCode = orgCode,
-        NoOfVerifications = records.Length,
-        Verifications = records
+        logger.LogError(item, item.Message);
     }
-};
-var bulkVerifyUsiResponse = usiServiceClient.BulkVerifyUSIAsync(bulkVerifyUsiRequest).Result;
-Console.WriteLine();
-Console.WriteLine(JsonSerializer.Serialize(bulkVerifyUsiResponse.BulkVerifyUSIResponse1.VerificationResponses.Take(maxRecords), jsonSerializerOptions));
-Console.WriteLine();
+}
+catch (Exception exception)
+{
+    echoResponse = null;
+    logger.LogError(exception, exception.Message);
+}
 
+if (echoResponse is not null)
+{
+    Console.WriteLine(JsonSerializer.Serialize(echoResponse, jsonSerializerOptions));
+}
+
+Console.WriteLine();
+FuzzySearchRequest fuzzySearchRequest = new()
+{
+    OrgCode = orgCode,
+    FirstName = "Argentina",
+    FamilyName = "Abdullah",
+    DateOfBirth = DateTime.Parse("1992-09-04"),
+    GenderCode = "F",
+    CountryOfBirthCode = "1101"
+};
+FuzzySearchResponse? fuzzySearchResponse;
+try
+{
+    fuzzySearchResponse = usiServiceClient.FuzzyAsync(fuzzySearchRequest).Result;
+}
+catch (AggregateException aggregateException)
+{
+    fuzzySearchResponse = null;
+    var flattened = aggregateException.Flatten();
+    foreach (var item in flattened.InnerExceptions)
+    {
+        logger.LogError(item, item.Message);
+    }
+}
+catch (Exception exception)
+{
+    fuzzySearchResponse = null;
+    logger.LogError(exception, exception.Message);
+}
+
+if (fuzzySearchResponse is not null)
+{
+    Console.WriteLine(JsonSerializer.Serialize(fuzzySearchResponse, jsonSerializerOptions));
+}
+
+Console.WriteLine();
 Console.WriteLine("Press enter to exit...");
 Console.ReadLine();
