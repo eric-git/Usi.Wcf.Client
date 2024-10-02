@@ -53,11 +53,11 @@ if (echoResponse is not null)
 Console.WriteLine();
 FuzzySearchRequest fuzzySearchRequest = new()
 {
-    FirstName ="TestFIR",
-    MiddleName = "TestMID",
-    FamilyName = "TestFAM",
-    DateOfBirth = DateTime.Today.AddDays(-1),
-    GenderCode = "M",
+    OrgCode = orgCode,
+    FirstName = "Argentina",
+    FamilyName = "Abdullah",
+    DateOfBirth = DateTime.Parse("1992-09-04"),
+    GenderCode = "F",
     CountryOfBirthCode = "1101"
 };
 FuzzySearchResponse? fuzzySearchResponse;

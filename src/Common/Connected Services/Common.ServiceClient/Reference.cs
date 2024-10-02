@@ -141,6 +141,8 @@ namespace Common.ServiceClient
         
         private string MiddleNameField;
         
+        private string OrgCodeField;
+        
         private string SingleNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -218,6 +220,19 @@ namespace Common.ServiceClient
             set
             {
                 this.MiddleNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrgCode
+        {
+            get
+            {
+                return this.OrgCodeField;
+            }
+            set
+            {
+                this.OrgCodeField = value;
             }
         }
         
