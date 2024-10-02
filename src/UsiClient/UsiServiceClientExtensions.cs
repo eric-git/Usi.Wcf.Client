@@ -19,11 +19,11 @@ public static class UsiServiceClientExtensions
 
         if (clientMode == ClientMode.IssuedToken)
         {
-            services.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
+            services.AddTransient<IUsiService, IssuedTokenUsiServiceClient>();
         }
         else
         {
-            services.AddTransient<IUSIService, IssuerBindingUsiServiceClient>();
+            services.AddTransient<IUsiService, IssuerBindingUsiServiceClient>();
         }
 
         services

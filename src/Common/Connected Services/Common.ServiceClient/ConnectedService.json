@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://3pt.portal.usi.gov.au/service/v5/usiservice.wsdl"
+      "https://localhost:4443/service/school/usiservice.svc"
     ],
     "collectionTypes": [
       "System.Collections.Generic.Dictionary`2",
@@ -11,6 +11,7 @@
       "*, Common.ServiceClient"
     ],
     "references": [
+      "Microsoft.Extensions.Caching.Abstractions, {Microsoft.Extensions.Caching.Abstractions, 8.0.0}",
       "Microsoft.Extensions.Configuration, {Microsoft.Extensions.Configuration, 8.0.0}",
       "Microsoft.Extensions.Configuration.Abstractions, {Microsoft.Extensions.Configuration.Abstractions, 8.0.0}",
       "Microsoft.Extensions.DependencyInjection, {Microsoft.Extensions.DependencyInjection, 8.0.0}",
