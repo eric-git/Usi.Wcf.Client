@@ -6,21 +6,21 @@ This is an example for modern .net apps to consume USI WCF Web service.
 
 There are 2 modes supported:
 
--   IssuedToken: manually call the STS service to obtain the security token
--   IssuerBinding: use nested configuration, the built-in channel calls the STS service to obtain the security token
+-   `IssuedToken`: manually call the STS service to obtain the security token
+-   `IssuerBinding`: use nested configuration, the built-in channel calls the STS service to obtain the security token
 
-See **appsettings.json** and **launchSettings.json** for details.
+See [appsettings.json](./src/Console/appsettings.json) and [launchSettings.json](./src/Console/Properties/launchSettings.json) for details.
 
 ## Testing accounts
 
 There are 2 testing accounts used:
 
--   VA1802: this is an example for "ActAs", the first party is: 11000002568, the second is: 96312011219
--   VA1803: this is an example suits most of the simple cases
+-   `VA1802`: this is an example for "ActAs", the first party is: 11000002568, the second is: 96312011219
+-   `VA1803`: this is an example suits most of the simple cases
 
 ## Operations
 
 This example invokes the following WCF operations for demo
 
--   http://usi.gov.au/2022/ws/GetCountries (GetCountriesAsync)
--   http://usi.gov.au/2022/ws/BulkVerifyUSI (BulkVerifyUSIAsync)
+-   `http://usi.gov.au/2022/ws/GetCountries` (GetCountriesAsync)
+-   `http://usi.gov.au/2022/ws/BulkVerifyUSI` (BulkVerifyUSIAsync)

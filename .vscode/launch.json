@@ -2,22 +2,56 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": "1.1 IssuerBinding Mode (VA1803)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/Console/bin/Debug/net8.0/Console.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Console",
+            "cwd": "${workspaceFolder}/src/Console/bin/Debug/net8.0",
             "launchSettingsFilePath": "${workspaceFolder}/src/Console/Properties/launchSettings.json",
             "launchSettingsProfile": "1.1 IssuerBinding Mode (VA1803)",
             "console": "externalTerminal",
             "stopAtEntry": false
         },
         {
-            "name": ".NET Core Attach",
+            "name": "1.2 IssuedToken Mode (VA1803)",
             "type": "coreclr",
-            "request": "attach"
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/Console/bin/Debug/net8.0/Console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Console/bin/Debug/net8.0",
+            "launchSettingsFilePath": "${workspaceFolder}/src/Console/Properties/launchSettings.json",
+            "launchSettingsProfile": "1.2 IssuedToken Mode (VA1803)",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "2.1 IssuerBinding Mode (VA1802 - ActAs)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/Console/bin/Debug/net8.0/Console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Console/bin/Debug/net8.0",
+            "launchSettingsFilePath": "${workspaceFolder}/src/Console/Properties/launchSettings.json",
+            "launchSettingsProfile": "2.1 IssuerBinding Mode (VA1802 - ActAs)",
+            "console": "externalTerminal",
+            "stopAtEntry": false
+        },
+        {
+            "name": "2.2 IssuedToken Mode (VA1802 - ActAs)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/Console/bin/Debug/net8.0/Console.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Console/bin/Debug/net8.0",
+            "launchSettingsFilePath": "${workspaceFolder}/src/Console/Properties/launchSettings.json",
+            "launchSettingsProfile": "2.2 IssuedToken Mode (VA1802 - ActAs)",
+            "console": "externalTerminal",
+            "stopAtEntry": false
         }
     ]
 }

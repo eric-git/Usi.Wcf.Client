@@ -13,6 +13,8 @@ public static class WsMessageHelper
     private const string Wst2008 = "http://docs.oasis-open.org/ws-sx/ws-trust/200802";
     private const string V13 = "http://vanguard.business.gov.au/2016/03";
     private const string PartyScheme = "uri://abr.gov.au/ABN";
+    private const string MachineCredentialClaim = "ABR_Device";
+
 
     public static XmlElement GetAppliesToElement(Uri uri)
     {
@@ -52,19 +54,19 @@ public static class WsMessageHelper
         return xmlDocument.DocumentElement ?? throw new ApplicationException();
     }
 
-    public static Claims GetRequiredClaimTypes() => new("http://schemas.xmlsoap.org/ws/2005/05/identity",
+    public static Claims GetRequiredClaimTypes(string abn) => new("http://schemas.xmlsoap.org/ws/2005/05/identity",
         [
             new ClaimType
             {
                 IsOptional = false,
                 Uri = "http://vanguard.ebusiness.gov.au/2008/06/identity/claims/abn",
-                Value = "abn"
+                Value = abn
             },
             new ClaimType
             {
                 IsOptional = false,
                 Uri = "http://vanguard.ebusiness.gov.au/2008/06/identity/claims/credentialtype",
-                Value = "D"
+                Value = MachineCredentialClaim
             }
         ]);
 

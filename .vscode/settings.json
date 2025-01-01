@@ -2,10 +2,19 @@
     "cSpell.words": [
         "ABRD",
         "appsettings",
+        "Browsable",
+        "Centrelink",
+        "Colour",
+        "Immi",
         "INGLETON",
         "IUSI",
+        "Licence",
+        "Organisation",
         "OSPfor",
-        "Pkcs"
+        "Pkcs",
+        "Svcutil",
+        "userprefs"
     ],
-    "workbench.colorTheme": "Tomorrow Night Blue"
+    "workbench.colorTheme": "Abyss",
+    "editor.defaultFormatter": "ms-dotnettools.csdevkit"
 }

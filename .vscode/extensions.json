@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "ms-dotnettools.csharp"
+        "pkief.material-icon-theme",
+        "ms-dotnettools.csdevkit",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
