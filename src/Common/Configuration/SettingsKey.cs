@@ -17,7 +17,7 @@ public static class SettingsKey
     public const string KeystoreClientCredentialId = "atoSettings:id";
 
     public const string UsiServiceEndpoint = "usiSettings:endpoint";
-    
+
     public const string UsiOrgCode = "usiSettings:code";
 
     public const string ActAs = "atoSettings:actAs";

@@ -29,7 +29,6 @@ public class IssuerBindingUsiServiceClient(
         var wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
         wsTrustTokenParameters.KeyType = SecurityKeyType.SymmetricKey;
         wsTrustTokenParameters.TokenType = "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0";
-        wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes();
         if (TimeSpan.TryParse(configuration[SettingsKey.TokenLifeTime], out var timeSpan))
         {
             wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetLifeTimeElement(timeSpan));
@@ -37,8 +36,13 @@ public class IssuerBindingUsiServiceClient(
         }
 
         var actAs = configuration[SettingsKey.ActAs];
-        if (!string.IsNullOrWhiteSpace(actAs))
+        if (string.IsNullOrWhiteSpace(actAs))
         {
+            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(abn);
+        }
+        else
+        {
+            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(actAs);
             wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetActAsElement(abn, actAs));
         }
 

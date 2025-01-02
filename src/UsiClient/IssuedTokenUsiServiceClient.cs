@@ -33,7 +33,6 @@ public class IssuedTokenUsiServiceClient(
             ws2007HttpBinding.Security.Message.NegotiateServiceCredential = false;
             var wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
             wsTrustTokenParameters.KeyType = SecurityKeyType.SymmetricKey;
-            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes();
             wsTrustTokenParameters.CacheIssuedTokens = false;
             if (TimeSpan.TryParse(configuration[SettingsKey.TokenLifeTime], out TimeSpan timeSpan))
             {
@@ -41,8 +40,13 @@ public class IssuedTokenUsiServiceClient(
             }
 
             var actAs = configuration[SettingsKey.ActAs];
-            if (!string.IsNullOrWhiteSpace(actAs))
+            if (string.IsNullOrWhiteSpace(actAs))
             {
+                wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(abn);
+            }
+            else
+            {
+                wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(actAs);
                 wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetActAsElement(abn, actAs));
             }
 
