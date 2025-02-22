@@ -72,3 +72,6 @@ var bulkVerifyUsiResponse = usiServiceClient.BulkVerifyUSIAsync(bulkVerifyUsiReq
 Console.WriteLine();
 Console.WriteLine(JsonSerializer.Serialize(bulkVerifyUsiResponse.BulkVerifyUSIResponse1.VerificationResponses.Take(maxRecords), jsonSerializerOptions));
 Console.WriteLine();
+
+Console.WriteLine("Press enter to exit...");
+Console.ReadLine();
