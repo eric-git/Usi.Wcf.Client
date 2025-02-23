@@ -2,6 +2,7 @@
     "recommendations": [
         "pkief.material-icon-theme",
         "ms-dotnettools.csdevkit",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode"
     ]
 }

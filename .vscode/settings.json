@@ -16,5 +16,12 @@
         "userprefs"
     ],
     "workbench.colorTheme": "Abyss",
-    "editor.defaultFormatter": "ms-dotnettools.csdevkit"
+    "editor.defaultFormatter": "ms-dotnettools.csdevkit",
+    "debug.hideSlowPreLaunchWarning": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    }
 }
