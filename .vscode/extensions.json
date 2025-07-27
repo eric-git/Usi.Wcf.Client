@@ -1,8 +1,8 @@
 {
-    "recommendations": [
-        "pkief.material-icon-theme",
-        "ms-dotnettools.csdevkit",
-        "streetsidesoftware.code-spell-checker",
-        "esbenp.prettier-vscode"
-    ]
+  "recommendations": [
+    "pkief.material-icon-theme",
+    "ms-dotnettools.csdevkit",
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode"
+  ]
 }
