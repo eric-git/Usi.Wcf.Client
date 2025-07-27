@@ -1,27 +1,28 @@
 {
-    "cSpell.words": [
-        "ABRD",
-        "appsettings",
-        "Browsable",
-        "Centrelink",
-        "Colour",
-        "Immi",
-        "INGLETON",
-        "IUSI",
-        "Licence",
-        "Organisation",
-        "OSPfor",
-        "Pkcs",
-        "Svcutil",
-        "userprefs"
-    ],
-    "workbench.colorTheme": "Abyss",
-    "editor.defaultFormatter": "ms-dotnettools.csdevkit",
-    "debug.hideSlowPreLaunchWarning": true,
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[csharp]": {
-        "editor.defaultFormatter": "ms-dotnettools.csharp"
-    }
+  "cSpell.words": [
+    "ABRD",
+    "appsettings",
+    "Browsable",
+    "Centrelink",
+    "Colour",
+    "Immi",
+    "INGLETON",
+    "IUSI",
+    "Licence",
+    "nologo",
+    "Organisation",
+    "OSPfor",
+    "Pkcs",
+    "Svcutil",
+    "userprefs"
+  ],
+  "workbench.colorTheme": "Abyss",
+  "editor.defaultFormatter": "ms-dotnettools.csdevkit",
+  "debug.hideSlowPreLaunchWarning": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  }
 }
