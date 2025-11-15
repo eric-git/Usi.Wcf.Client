@@ -1,4 +1,4 @@
-# Sample .net 8 client app for USI Web services
+# Sample .net 10 client app for USI Web services
 
 This is an example for modern .net apps to consume USI WCF Web service.
 
