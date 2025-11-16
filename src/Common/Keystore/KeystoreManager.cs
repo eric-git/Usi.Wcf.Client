@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 using System.Xml.XPath;
@@ -40,9 +41,9 @@ public class KeystoreManager(IConfiguration configuration, IMemoryCache memoryCa
                 throw new NotSupportedException("The keystore file is not valid. The ABN could not be found.");
             }
 
-            X509Certificate2Collection x509Certificate2Collection = [];
-            x509Certificate2Collection.Import(Convert.FromBase64String(publicCertificateString));
-            var x509Certificate2 = x509Certificate2Collection.FirstOrDefault(c => c.SubjectName.Name.Contains(abn)) ??
+            SignedCms signedCms = new();
+            signedCms.Decode(Convert.FromBase64String(publicCertificateString));
+            var x509Certificate2 = signedCms.Certificates.FirstOrDefault(c => c.SubjectName.Name.Contains(abn)) ??
                                    throw new NotSupportedException("The keystore file is not valid. The required certificate could not be found.");
             using var rsa = RSA.Create();
             rsa.ImportEncryptedPkcs8PrivateKey(password, Convert.FromBase64String(privateKeyString), out _);
