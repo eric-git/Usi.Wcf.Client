@@ -3,6 +3,8 @@
     "pkief.material-icon-theme",
     "ms-dotnettools.csdevkit",
     "streetsidesoftware.code-spell-checker",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "ms-vscode.powershell",
+    "mads-hartmann.bash-ide-vscode"
   ]
 }

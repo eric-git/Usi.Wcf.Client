@@ -1,26 +1,52 @@
-# Sample .net 10 client app for USI Web services
+# Sample .NET 10 Client App for USI Web Services
 
-This is an example for modern .net apps to consume USI WCF Web service.
+This is an example for modern .NET apps to consume USI WCF Web service.
 
-## Authentication modes
+---
 
-There are 2 modes supported:
+## Authentication Modes
 
--   `IssuedToken`: manually call the STS service to obtain the security token
--   `IssuerBinding`: use nested configuration, the built-in channel calls the STS service to obtain the security token
+Two modes are supported:
+
+-   **IssuedToken**: manually call the STS service to obtain the security token.
+-   **IssuerBinding**: use nested configuration; the built‑in channel calls the STS service to obtain the security token.
 
 See [appsettings.json](./src/Console/appsettings.json) and [launchSettings.json](./src/Console/Properties/launchSettings.json) for details.
 
-## Testing accounts
+---
 
-There are 2 testing accounts used:
+## Testing Accounts
 
--   `VA1802`: this is an example for "ActAs", the first party is: 11000002568, the second is: 96312011219
--   `VA1803`: this is an example suits most of the simple cases
+Two testing accounts are provided:
+
+-   **VA1802**: example for "ActAs"
+    -   First party: `11000002568`
+    -   Second party: `96312011219`
+-   **VA1803**: example that suits most simple cases.
+
+---
 
 ## Operations
 
-This example invokes the following WCF operations for demo
+This example invokes the following WCF operations:
 
--   `http://usi.gov.au/2022/ws/GetCountries` (GetCountriesAsync)
--   `http://usi.gov.au/2022/ws/BulkVerifyUSI` (BulkVerifyUSIAsync)
+-   `http://usi.gov.au/2022/ws/GetCountries` → `GetCountriesAsync`
+-   `http://usi.gov.au/2022/ws/BulkVerifyUSI` → `BulkVerifyUSIAsync`
+
+---
+
+## Prerequisites
+
+-   .NET 10 SDK installed
+-   Visual Studio 2022 or VS Code
+-   Access to USI test endpoints
+-   Valid test account credentials
+
+---
+
+## Running the Sample
+
+```bash
+dotnet build
+dotnet run --project ./src/Console
+```
