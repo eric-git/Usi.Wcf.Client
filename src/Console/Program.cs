@@ -2,12 +2,17 @@
 using System.Text.Json.Serialization;
 using Common.Configuration;
 using Common.ServiceClient;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using UsiClient;
 
 var hostApplicationBuilder = Host.CreateApplicationBuilder();
+hostApplicationBuilder.Configuration
+    .SetBasePath(AppContext.BaseDirectory)
+    .AddJsonFile("appsettings.json", false, true)
+    .AddEnvironmentVariables();
 hostApplicationBuilder.Services.AddUsiClient(hostApplicationBuilder.Configuration, out var clientMode);
 hostApplicationBuilder.Build();
 
