@@ -18,7 +18,7 @@ public class KeystoreManager(IConfiguration configuration, IMemoryCache memoryCa
         {
             var fileName = configuration[SettingsKey.KeystoreFileName] ?? throw new ApplicationException();
             var password = configuration[SettingsKey.KeystorePassword] ?? throw new ApplicationException();
-            XPathDocument xmlDocument = new(fileName);
+            XPathDocument xmlDocument = new(Path.Combine(AppContext.BaseDirectory, fileName));
             var xPathNavigator = xmlDocument.CreateNavigator();
             XmlNamespaceManager ns = new(xPathNavigator.NameTable);
             ns.AddNamespace("store", "http://auth.abr.gov.au/credential/xsd/SBRCredentialStore");
