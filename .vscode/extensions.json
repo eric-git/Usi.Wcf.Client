@@ -5,6 +5,7 @@
     "streetsidesoftware.code-spell-checker",
     "esbenp.prettier-vscode",
     "ms-vscode.powershell",
-    "mads-hartmann.bash-ide-vscode"
+    "mads-hartmann.bash-ide-vscode",
+    "patcx.vscode-nuget-gallery"
   ]
 }

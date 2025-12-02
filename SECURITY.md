@@ -1,26 +1,47 @@
-# Security
+# Security Policy
 
-We take security seriously.
-If you discover a vulnerability or security issue, please **do not open a public issue**.
-Instead, report it responsibly via:
+## Supported Versions
 
-- GitHub's [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories)
-- Or email: security@example.com
+We release security updates for the following versions:
 
-See our [SECURITY.md](SECURITY.md) for full details on supported versions and disclosure guidelines.
+| Version | Supported              |
+| ------- | ---------------------- |
+| latest  | ✅                     |
+| older   | ⚠️ critical fixes only |
 
----
-
-# Versions
-
-This project tracks the latest **.NET LTS releases**.
-- Active development follows the newest LTS version as soon as it is available.
-- Older versions are maintained only for **critical security fixes**.
-- For historical releases, please refer to the [project history](./HISTORY.md).
+If you are using an unsupported version, please upgrade to the latest release.
 
 ---
 
-# License
+## Reporting a Vulnerability
 
-This project is licensed under the [MIT License](LICENSE).
-See the LICENSE file for details.
+We take security seriously.  
+If you discover a vulnerability, **do not open a public issue**.
+
+Instead, please report it responsibly via one of the following:
+
+- Use GitHub’s [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories)
+- Or email: **it@usi.gov.au**
+
+---
+
+## Disclosure Guidelines
+
+- Provide as much detail as possible (steps to reproduce, affected files, etc.).
+- Allow us reasonable time to investigate and patch before public disclosure.
+- We will acknowledge receipt within 48 hours and aim to provide a fix within 14 days.
+
+---
+
+## Security Best Practices
+
+- Always run the latest supported version.
+- Keep dependencies up to date.
+- Avoid exposing configuration files (`.env`, `web.config`, etc.) publicly.
+- Use HTTPS for all deployments.
+
+---
+
+## Credits
+
+We appreciate responsible security research and will credit reporters in release notes unless anonymity is requested.

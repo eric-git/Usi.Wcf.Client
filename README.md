@@ -1,52 +1,52 @@
-# Sample .NET 10 Client App for USI Web Services
+# .NET Sample Application for USI Services
 
-This is an example for modern .NET apps to consume USI WCF Web service.
-
----
-
-## Authentication Modes
-
-Two modes are supported:
-
--   **IssuedToken**: manually call the STS service to obtain the security token.
--   **IssuerBinding**: use nested configuration; the built‑in channel calls the STS service to obtain the security token.
-
-See [appsettings.json](./src/Console/appsettings.json) and [launchSettings.json](./src/Console/Properties/launchSettings.json) for details.
+A sample .NET application demonstrating how modern .NET apps can consume the **USI WCF Web Service**.
 
 ---
 
-## Testing Accounts
+## 🔑 Authentication Modes
 
-Two testing accounts are provided:
+Two authentication modes are supported:
 
--   **VA1802**: example for "ActAs"
+-   **IssuedToken**  
+    Manually call the STS service to obtain a security token.
+-   **IssuerBinding**  
+    Use nested configuration; the built‑in channel automatically calls the STS service to obtain the token.
+
+See [appsettings.json](./src/Console/appsettings.json) and [launchSettings.json](./src/Console/Properties/launchSettings.json) for configuration details.
+
+---
+
+## 🧪 Testing Accounts
+
+Two test accounts are available:
+
+-   **VA1802** → Example for _ActAs_ delegation
     -   First party: `11000002568`
     -   Second party: `96312011219`
--   **VA1803**: example that suits most simple cases.
+-   **VA1803** → Example that suits most simple cases
 
 ---
 
-## Operations
+## ⚙️ Operations
 
-This example invokes the following WCF operations:
+This sample demonstrates the following WCF operations:
 
 -   `http://usi.gov.au/2022/ws/GetCountries` → `GetCountriesAsync`
 -   `http://usi.gov.au/2022/ws/BulkVerifyUSI` → `BulkVerifyUSIAsync`
 
 ---
 
-## Prerequisites
+## 📦 Prerequisites
 
--   .NET 10 SDK installed
--   Visual Studio 2022 or VS Code
--   Access to USI test endpoints
--   Valid test account credentials
+-   Latest .NET SDK LTS installed
+-   Visual Studio 2022+ or VS Code
 
 ---
 
-## Running the Sample
+## ▶️ Running the Sample
 
-```bash
+```sh
 dotnet build
 dotnet run --project ./src/Console
 ```
