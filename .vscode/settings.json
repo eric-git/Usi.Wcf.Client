@@ -17,6 +17,7 @@
     "userprefs"
   ],
   "workbench.colorTheme": "Abyss",
+  "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "ms-dotnettools.csdevkit",
   "debug.hideSlowPreLaunchWarning": true,
   "[markdown]": {
