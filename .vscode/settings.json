@@ -5,6 +5,7 @@
     "Browsable",
     "Centrelink",
     "Colour",
+    "HQ9HHNJC3J",
     "Immi",
     "INGLETON",
     "IUSI",
@@ -14,7 +15,8 @@
     "OSPfor",
     "Pkcs",
     "Svcutil",
-    "userprefs"
+    "userprefs",
+    "ZYWIEC"
   ],
   "workbench.colorTheme": "Abyss",
   "workbench.iconTheme": "material-icon-theme",
@@ -28,5 +30,8 @@
   },
   "[shellscript]": {
     "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
   }
 }

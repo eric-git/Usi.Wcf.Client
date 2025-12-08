@@ -9,21 +9,21 @@
 
 namespace Common.ServiceClient
 {
-    
-    
+
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2020/ws")]
     public partial class ErrorInfo
     {
-        
+
         private int codeField;
-        
+
         private string titleField;
-        
+
         private string messageField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Code
@@ -37,7 +37,7 @@ namespace Common.ServiceClient
                 this.codeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Title
@@ -51,7 +51,7 @@ namespace Common.ServiceClient
                 this.titleField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Message
@@ -66,16 +66,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkUploadResponseType
     {
-        
+
         private string receiptNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ReceiptNumber
@@ -90,7 +90,7 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisaDocumentType))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PassportDocumentType))]
@@ -107,16 +107,16 @@ namespace Common.ServiceClient
     public abstract partial class DVSDocumentType
     {
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class VisaDocumentType : DVSDocumentType
     {
-        
+
         private string passportNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string PassportNumber
@@ -131,16 +131,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class PassportDocumentType : DVSDocumentType
     {
-        
+
         private string documentNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string DocumentNumber
@@ -155,22 +155,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CentrelinkCardType : DVSDocumentType
     {
-        
+
         private string cRNField;
-        
+
         private string nameField;
-        
+
         private string expiryDateField;
-        
+
         private CentrelinkCardTypeType typeField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CRN
@@ -184,7 +184,7 @@ namespace Common.ServiceClient
                 this.cRNField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name
@@ -198,7 +198,7 @@ namespace Common.ServiceClient
                 this.nameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string ExpiryDate
@@ -212,7 +212,7 @@ namespace Common.ServiceClient
                 this.expiryDateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public CentrelinkCardTypeType Type
@@ -227,46 +227,46 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum CentrelinkCardTypeType
     {
-        
+
         /// <remarks/>
         PCC,
-        
+
         /// <remarks/>
         HCC,
-        
+
         /// <remarks/>
         SHC,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class MedicareDocumentType : DVSDocumentType
     {
-        
+
         private string medicareCardNumberField;
-        
+
         private string individualRefNumberField;
-        
+
         private string expiryDateField;
-        
+
         private MedicareDocumentTypeCardColour cardColourField;
-        
+
         private string nameLine1Field;
-        
+
         private string nameLine2Field;
-        
+
         private string nameLine3Field;
-        
+
         private string nameLine4Field;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string MedicareCardNumber
@@ -280,7 +280,7 @@ namespace Common.ServiceClient
                 this.medicareCardNumberField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string IndividualRefNumber
@@ -294,7 +294,7 @@ namespace Common.ServiceClient
                 this.individualRefNumberField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string ExpiryDate
@@ -308,7 +308,7 @@ namespace Common.ServiceClient
                 this.expiryDateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public MedicareDocumentTypeCardColour CardColour
@@ -322,7 +322,7 @@ namespace Common.ServiceClient
                 this.cardColourField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string NameLine1
@@ -336,7 +336,7 @@ namespace Common.ServiceClient
                 this.nameLine1Field = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string NameLine2
@@ -350,7 +350,7 @@ namespace Common.ServiceClient
                 this.nameLine2Field = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string NameLine3
@@ -364,7 +364,7 @@ namespace Common.ServiceClient
                 this.nameLine3Field = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string NameLine4
@@ -379,32 +379,32 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum MedicareDocumentTypeCardColour
     {
-        
+
         /// <remarks/>
         Green,
-        
+
         /// <remarks/>
         Blue,
-        
+
         /// <remarks/>
         Yellow,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ImmiCardDocumentType : DVSDocumentType
     {
-        
+
         private string immiCardNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ImmiCardNumber
@@ -419,20 +419,20 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class DriversLicenceDocumentType : DVSDocumentType
     {
-        
+
         private string licenceNumberField;
-        
+
         private StateListType stateField;
-        
+
         private string cardNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string LicenceNumber
@@ -446,7 +446,7 @@ namespace Common.ServiceClient
                 this.licenceNumberField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public StateListType State
@@ -460,7 +460,7 @@ namespace Common.ServiceClient
                 this.stateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string CardNumber
@@ -475,49 +475,49 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public enum StateListType
     {
-        
+
         /// <remarks/>
         NSW,
-        
+
         /// <remarks/>
         VIC,
-        
+
         /// <remarks/>
         QLD,
-        
+
         /// <remarks/>
         SA,
-        
+
         /// <remarks/>
         WA,
-        
+
         /// <remarks/>
         TAS,
-        
+
         /// <remarks/>
         NT,
-        
+
         /// <remarks/>
         ACT,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CitizenshipCertificateDocumentType : DVSDocumentType
     {
-        
+
         private string stockNumberField;
-        
+
         private System.DateTime acquisitionDateField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string StockNumber
@@ -531,7 +531,7 @@ namespace Common.ServiceClient
                 this.stockNumberField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
         public System.DateTime AcquisitionDate
@@ -546,16 +546,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CertificateOfRegistrationByDescentDocumentType : DVSDocumentType
     {
-        
+
         private System.DateTime acquisitionDateField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=0)]
         public System.DateTime AcquisitionDate
@@ -570,28 +570,28 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BirthCertificateDocumentType : DVSDocumentType
     {
-        
+
         private string registrationNumberField;
-        
+
         private StateListType registrationStateField;
-        
+
         private System.DateTime registrationDateField;
-        
+
         private bool registrationDateFieldSpecified;
-        
+
         private System.DateTime datePrintedField;
-        
+
         private bool datePrintedFieldSpecified;
-        
+
         private string certificateNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RegistrationNumber
@@ -605,7 +605,7 @@ namespace Common.ServiceClient
                 this.registrationNumberField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public StateListType RegistrationState
@@ -619,7 +619,7 @@ namespace Common.ServiceClient
                 this.registrationStateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
         public System.DateTime RegistrationDate
@@ -633,7 +633,7 @@ namespace Common.ServiceClient
                 this.registrationDateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool RegistrationDateSpecified
@@ -647,7 +647,7 @@ namespace Common.ServiceClient
                 this.registrationDateFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
         public System.DateTime DatePrinted
@@ -661,7 +661,7 @@ namespace Common.ServiceClient
                 this.datePrintedField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool DatePrintedSpecified
@@ -675,7 +675,7 @@ namespace Common.ServiceClient
                 this.datePrintedFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string CertificateNumber
@@ -690,34 +690,34 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class PersonalDetailsType
     {
-        
+
         private PersonalDetailsTypeGender genderField;
-        
+
         private string[] itemsField;
-        
+
         private ItemsChoiceType[] itemsElementNameField;
-        
+
         private System.DateTime dateOfBirthField;
-        
+
         private string countryOfBirthCodeField;
-        
+
         private string townCityOfBirthField;
-        
+
         private bool isPreferredNameField;
-        
+
         private string preferredFirstNameField;
-        
+
         private string preferredFamilyNameField;
-        
+
         private string preferredSingleNameField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public PersonalDetailsTypeGender Gender
@@ -731,7 +731,7 @@ namespace Common.ServiceClient
                 this.genderField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(string), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(string), Order=1)]
@@ -749,7 +749,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=2)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -764,7 +764,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
         public System.DateTime DateOfBirth
@@ -778,7 +778,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string CountryOfBirthCode
@@ -792,7 +792,7 @@ namespace Common.ServiceClient
                 this.countryOfBirthCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string TownCityOfBirth
@@ -806,7 +806,7 @@ namespace Common.ServiceClient
                 this.townCityOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public bool IsPreferredName
@@ -820,7 +820,7 @@ namespace Common.ServiceClient
                 this.isPreferredNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string PreferredFirstName
@@ -834,7 +834,7 @@ namespace Common.ServiceClient
                 this.preferredFirstNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string PreferredFamilyName
@@ -848,7 +848,7 @@ namespace Common.ServiceClient
                 this.preferredFamilyNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         public string PreferredSingleName
@@ -863,59 +863,59 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum PersonalDetailsTypeGender
     {
-        
+
         /// <remarks/>
         M,
-        
+
         /// <remarks/>
         F,
-        
+
         /// <remarks/>
         X,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         MiddleName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class NationalAddressType
     {
-        
+
         private string address1Field;
-        
+
         private string address2Field;
-        
+
         private string suburbTownCityField;
-        
+
         private StateListType stateField;
-        
+
         private string postCodeField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Address1
@@ -929,7 +929,7 @@ namespace Common.ServiceClient
                 this.address1Field = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Address2
@@ -943,7 +943,7 @@ namespace Common.ServiceClient
                 this.address2Field = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string SuburbTownCity
@@ -957,7 +957,7 @@ namespace Common.ServiceClient
                 this.suburbTownCityField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public StateListType State
@@ -971,7 +971,7 @@ namespace Common.ServiceClient
                 this.stateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string PostCode
@@ -986,18 +986,18 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class PhoneType
     {
-        
+
         private string homeField;
-        
+
         private string mobileField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Home
@@ -1011,7 +1011,7 @@ namespace Common.ServiceClient
                 this.homeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Mobile
@@ -1026,22 +1026,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ContactDetailsType
     {
-        
+
         private string countryOfResidenceCodeField;
-        
+
         private string emailAddressField;
-        
+
         private PhoneType phoneField;
-        
+
         private object itemField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CountryOfResidenceCode
@@ -1055,7 +1055,7 @@ namespace Common.ServiceClient
                 this.countryOfResidenceCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string EmailAddress
@@ -1069,7 +1069,7 @@ namespace Common.ServiceClient
                 this.emailAddressField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public PhoneType Phone
@@ -1083,7 +1083,7 @@ namespace Common.ServiceClient
                 this.phoneField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("InternationalAddress", typeof(string), Order=3)]
         [System.Xml.Serialization.XmlElementAttribute("NationalAddress", typeof(NationalAddressType), Order=3)]
@@ -1099,36 +1099,36 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ApplicationType
     {
-        
+
         private string applicationIdField;
-        
+
         private bool dVSCheckRequiredField;
-        
+
         private string userReferenceField;
-        
+
         private ContactDetailsType contactDetailsField;
-        
+
         private PersonalDetailsType personalDetailsField;
-        
+
         private DVSDocumentType dVSDocumentField;
-        
+
         private System.Nullable<int> nonDvsDocumentTypeIdField;
-        
+
         private bool nonDvsDocumentTypeIdFieldSpecified;
-        
+
         private string nonDvsDocumentTypeOtherField;
-        
+
         private System.Nullable<int> dvsOverrideReasonIdField;
-        
+
         private bool dvsOverrideReasonIdFieldSpecified;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ApplicationId
@@ -1142,7 +1142,7 @@ namespace Common.ServiceClient
                 this.applicationIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public bool DVSCheckRequired
@@ -1156,7 +1156,7 @@ namespace Common.ServiceClient
                 this.dVSCheckRequiredField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string UserReference
@@ -1170,7 +1170,7 @@ namespace Common.ServiceClient
                 this.userReferenceField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public ContactDetailsType ContactDetails
@@ -1184,7 +1184,7 @@ namespace Common.ServiceClient
                 this.contactDetailsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public PersonalDetailsType PersonalDetails
@@ -1198,7 +1198,7 @@ namespace Common.ServiceClient
                 this.personalDetailsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public DVSDocumentType DVSDocument
@@ -1212,7 +1212,7 @@ namespace Common.ServiceClient
                 this.dVSDocumentField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
         public System.Nullable<int> NonDvsDocumentTypeId
@@ -1226,7 +1226,7 @@ namespace Common.ServiceClient
                 this.nonDvsDocumentTypeIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool NonDvsDocumentTypeIdSpecified
@@ -1240,7 +1240,7 @@ namespace Common.ServiceClient
                 this.nonDvsDocumentTypeIdFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=7)]
         public string NonDvsDocumentTypeOther
@@ -1254,7 +1254,7 @@ namespace Common.ServiceClient
                 this.nonDvsDocumentTypeOtherField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=8)]
         public System.Nullable<int> DvsOverrideReasonId
@@ -1268,7 +1268,7 @@ namespace Common.ServiceClient
                 this.dvsOverrideReasonIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool DvsOverrideReasonIdSpecified
@@ -1283,22 +1283,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkUploadType
     {
-        
+
         private string orgCodeField;
-        
+
         private string requestIdField;
-        
+
         private int noOfApplicationsField;
-        
+
         private ApplicationType[] applicationsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -1312,7 +1312,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string RequestId
@@ -1326,7 +1326,7 @@ namespace Common.ServiceClient
                 this.requestIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int NoOfApplications
@@ -1340,7 +1340,7 @@ namespace Common.ServiceClient
                 this.noOfApplicationsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Application", IsNullable=false)]
@@ -1356,126 +1356,126 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://usi.gov.au/2022/ws/servicepolicy", ConfigurationName="Common.ServiceClient.IUSIService")]
     public interface IUSIService
     {
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkUpload", ReplyAction="http://usi.gov.au/2022/ws/BulkUploadResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> BulkUploadAsync(Common.ServiceClient.BulkUploadRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkVerifyUSI", ReplyAction="http://usi.gov.au/2022/ws/BulkVerifyUSIResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkVerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/VerifyUSI", ReplyAction="http://usi.gov.au/2022/ws/VerifyUSIResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/VerifyUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> VerifyUSIAsync(Common.ServiceClient.VerifyUSIRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/BulkUploadRetrieve", ReplyAction="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/BulkUploadRetrieveResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/CreateUSI", ReplyAction="http://usi.gov.au/2022/ws/CreateUSIResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/CreateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> CreateUSIAsync(Common.ServiceClient.CreateUSIRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypes", ReplyAction="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetNonDvsDocumentTypesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetails", ReplyAction="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIContactDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetails", ReplyAction="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/UpdateUSIPersonalDetailsResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/LocateUSI", ReplyAction="http://usi.gov.au/2022/ws/LocateUSIResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/LocateUSIResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> LocateUSIAsync(Common.ServiceClient.LocateUSIRequest request);
-        
+
         [System.ServiceModel.OperationContractAttribute(Action="http://usi.gov.au/2022/ws/GetCountries", ReplyAction="http://usi.gov.au/2022/ws/GetCountriesResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo[]), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ArrayOfErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.FaultContractAttribute(typeof(Common.ServiceClient.ErrorInfo), Action="http://usi.gov.au/2022/ws/GetCountriesResponseErrorInfoFault", Name="ErrorInfo", Namespace="http://usi.gov.au/2020/ws")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> GetCountriesAsync(Common.ServiceClient.GetCountriesRequest request);
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkUploadRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkUploadType BulkUpload;
-        
+
         public BulkUploadRequest()
         {
         }
-        
+
         public BulkUploadRequest(Common.ServiceClient.BulkUploadType BulkUpload)
         {
             this.BulkUpload = BulkUpload;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkUploadResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkUploadResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkUploadResponseType BulkUploadResponse1;
-        
+
         public BulkUploadResponse()
         {
         }
-        
+
         public BulkUploadResponse(Common.ServiceClient.BulkUploadResponseType BulkUploadResponse1)
         {
             this.BulkUploadResponse1 = BulkUploadResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkVerifyUSIType
     {
-        
+
         private string orgCodeField;
-        
+
         private int noOfVerificationsField;
-        
+
         private VerificationType[] verificationsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -1489,7 +1489,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int NoOfVerifications
@@ -1503,7 +1503,7 @@ namespace Common.ServiceClient
                 this.noOfVerificationsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Verification", IsNullable=false)]
@@ -1519,24 +1519,24 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class VerificationType
     {
-        
+
         private int recordIdField;
-        
+
         private string uSIField;
-        
+
         private string[] itemsField;
-        
+
         private ItemsChoiceType1[] itemsElementNameField;
-        
+
         private System.DateTime dateOfBirthField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int RecordId
@@ -1550,7 +1550,7 @@ namespace Common.ServiceClient
                 this.recordIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string USI
@@ -1564,7 +1564,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(string), Order=2)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(string), Order=2)]
@@ -1581,7 +1581,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=3)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -1596,7 +1596,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
         public System.DateTime DateOfBirth
@@ -1611,32 +1611,32 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType1
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkVerifyUSIResponseType
     {
-        
+
         private VerificationResponseType[] verificationResponsesField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("VerificationResponse", IsNullable=false)]
@@ -1652,28 +1652,28 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class VerificationResponseType
     {
-        
+
         private VerificationResponseTypeUSIStatus uSIStatusField;
-        
+
         private MatchResultType[] itemsField;
-        
+
         private ItemsChoiceType2[] itemsElementNameField;
-        
+
         private MatchResultType dateOfBirthField;
-        
+
         private bool dateOfBirthFieldSpecified;
-        
+
         private string uSIField;
-        
+
         private int recordIdField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public VerificationResponseTypeUSIStatus USIStatus
@@ -1687,7 +1687,7 @@ namespace Common.ServiceClient
                 this.uSIStatusField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(MatchResultType), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(MatchResultType), Order=1)]
@@ -1704,7 +1704,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=2)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -1719,7 +1719,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public MatchResultType DateOfBirth
@@ -1733,7 +1733,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool DateOfBirthSpecified
@@ -1747,7 +1747,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string USI
@@ -1761,7 +1761,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public int RecordId
@@ -1776,109 +1776,109 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum VerificationResponseTypeUSIStatus
     {
-        
+
         /// <remarks/>
         Valid,
-        
+
         /// <remarks/>
         Invalid,
-        
+
         /// <remarks/>
         Deactivated,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public enum MatchResultType
     {
-        
+
         /// <remarks/>
         Match,
-        
+
         /// <remarks/>
         NoMatch,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType2
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkVerifyUSIRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI;
-        
+
         public BulkVerifyUSIRequest()
         {
         }
-        
+
         public BulkVerifyUSIRequest(Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI)
         {
             this.BulkVerifyUSI = BulkVerifyUSI;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkVerifyUSIResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkVerifyUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1;
-        
+
         public BulkVerifyUSIResponse()
         {
         }
-        
+
         public BulkVerifyUSIResponse(Common.ServiceClient.BulkVerifyUSIResponseType BulkVerifyUSIResponse1)
         {
             this.BulkVerifyUSIResponse1 = BulkVerifyUSIResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class VerifyUSIType
     {
-        
+
         private string orgCodeField;
-        
+
         private string uSIField;
-        
+
         private string[] itemsField;
-        
+
         private ItemsChoiceType3[] itemsElementNameField;
-        
+
         private System.DateTime dateOfBirthField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -1892,7 +1892,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string USI
@@ -1906,7 +1906,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(string), Order=2)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(string), Order=2)]
@@ -1923,7 +1923,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=3)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -1938,7 +1938,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
         public System.DateTime DateOfBirth
@@ -1953,40 +1953,40 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType3
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class VerifyUSIResponseType
     {
-        
+
         private VerifyUSIResponseTypeUSIStatus uSIStatusField;
-        
+
         private MatchResultType[] itemsField;
-        
+
         private ItemsChoiceType4[] itemsElementNameField;
-        
+
         private MatchResultType dateOfBirthField;
-        
+
         private bool dateOfBirthFieldSpecified;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public VerifyUSIResponseTypeUSIStatus USIStatus
@@ -2000,7 +2000,7 @@ namespace Common.ServiceClient
                 this.uSIStatusField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(MatchResultType), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(MatchResultType), Order=1)]
@@ -2017,7 +2017,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=2)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -2032,7 +2032,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public MatchResultType DateOfBirth
@@ -2046,7 +2046,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool DateOfBirthSpecified
@@ -2061,88 +2061,88 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum VerifyUSIResponseTypeUSIStatus
     {
-        
+
         /// <remarks/>
         Valid,
-        
+
         /// <remarks/>
         Invalid,
-        
+
         /// <remarks/>
         Deactivated,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType4
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class VerifyUSIRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.VerifyUSIType VerifyUSI;
-        
+
         public VerifyUSIRequest()
         {
         }
-        
+
         public VerifyUSIRequest(Common.ServiceClient.VerifyUSIType VerifyUSI)
         {
             this.VerifyUSI = VerifyUSI;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class VerifyUSIResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="VerifyUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.VerifyUSIResponseType VerifyUSIResponse1;
-        
+
         public VerifyUSIResponse()
         {
         }
-        
+
         public VerifyUSIResponse(Common.ServiceClient.VerifyUSIResponseType VerifyUSIResponse1)
         {
             this.VerifyUSIResponse1 = VerifyUSIResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkUploadRetrieveType
     {
-        
+
         private string receiptNumberField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string ReceiptNumber
@@ -2157,22 +2157,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class BulkUploadRetrieveResponseType
     {
-        
+
         private string requestIdField;
-        
+
         private int noOfApplicationsField;
-        
+
         private int noOfApplicationsFailedField;
-        
+
         private ApplicationResponseType[] applicationsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RequestId
@@ -2186,7 +2186,7 @@ namespace Common.ServiceClient
                 this.requestIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public int NoOfApplications
@@ -2200,7 +2200,7 @@ namespace Common.ServiceClient
                 this.noOfApplicationsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int NoOfApplicationsFailed
@@ -2214,7 +2214,7 @@ namespace Common.ServiceClient
                 this.noOfApplicationsFailedField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Application", IsNullable=false)]
@@ -2230,26 +2230,26 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ApplicationResponseType
     {
-        
+
         private System.DateTime processedDateField;
-        
+
         private string applicationIdField;
-        
+
         private ApplicationResponseTypeResult resultField;
-        
+
         private ApplicationResponseTypeIdentityDocumentVerified identityDocumentVerifiedField;
-        
+
         private string uSIField;
-        
+
         private ErrorType[] errorsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public System.DateTime ProcessedDate
@@ -2263,7 +2263,7 @@ namespace Common.ServiceClient
                 this.processedDateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string ApplicationId
@@ -2277,7 +2277,7 @@ namespace Common.ServiceClient
                 this.applicationIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public ApplicationResponseTypeResult Result
@@ -2291,7 +2291,7 @@ namespace Common.ServiceClient
                 this.resultField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public ApplicationResponseTypeIdentityDocumentVerified IdentityDocumentVerified
@@ -2305,7 +2305,7 @@ namespace Common.ServiceClient
                 this.identityDocumentVerifiedField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string USI
@@ -2319,7 +2319,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
@@ -2335,50 +2335,50 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum ApplicationResponseTypeResult
     {
-        
+
         /// <remarks/>
         Success,
-        
+
         /// <remarks/>
         Failure,
-        
+
         /// <remarks/>
         MatchFound,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum ApplicationResponseTypeIdentityDocumentVerified
     {
-        
+
         /// <remarks/>
         True,
-        
+
         /// <remarks/>
         False,
-        
+
         /// <remarks/>
         NotRequired,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ErrorType
     {
-        
+
         private string codeField;
-        
+
         private string messageField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string Code
@@ -2392,7 +2392,7 @@ namespace Common.ServiceClient
                 this.codeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Message
@@ -2407,60 +2407,60 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkUploadRetrieveRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve;
-        
+
         public BulkUploadRetrieveRequest()
         {
         }
-        
+
         public BulkUploadRetrieveRequest(Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve)
         {
             this.BulkUploadRetrieve = BulkUploadRetrieve;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class BulkUploadRetrieveResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="BulkUploadRetrieveResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1;
-        
+
         public BulkUploadRetrieveResponse()
         {
         }
-        
+
         public BulkUploadRetrieveResponse(Common.ServiceClient.BulkUploadRetrieveResponseType BulkUploadRetrieveResponse1)
         {
             this.BulkUploadRetrieveResponse1 = BulkUploadRetrieveResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CreateUSIType
     {
-        
+
         private string requestIdField;
-        
+
         private string orgCodeField;
-        
+
         private ApplicationType applicationField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string RequestId
@@ -2474,7 +2474,7 @@ namespace Common.ServiceClient
                 this.requestIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string OrgCode
@@ -2488,7 +2488,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public ApplicationType Application
@@ -2503,16 +2503,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CreateUSIResponseType
     {
-        
+
         private ApplicationResponseType applicationField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public ApplicationResponseType Application
@@ -2527,56 +2527,56 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateUSIRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.CreateUSIType CreateUSI;
-        
+
         public CreateUSIRequest()
         {
         }
-        
+
         public CreateUSIRequest(Common.ServiceClient.CreateUSIType CreateUSI)
         {
             this.CreateUSI = CreateUSI;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class CreateUSIResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.CreateUSIResponseType CreateUSIResponse1;
-        
+
         public CreateUSIResponse()
         {
         }
-        
+
         public CreateUSIResponse(Common.ServiceClient.CreateUSIResponseType CreateUSIResponse1)
         {
             this.CreateUSIResponse1 = CreateUSIResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class GetNonDvsDocumentTypesType
     {
-        
+
         private string orgCodeField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -2591,16 +2591,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class GetNonDvsDocumentTypesResponseType
     {
-        
+
         private NonDvsDocumentTypeType[] nonDvsDocumentTypesField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("NonDvsDocumentType", IsNullable=false)]
@@ -2616,20 +2616,20 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class NonDvsDocumentTypeType
     {
-        
+
         private int idField;
-        
+
         private string documentTypeField;
-        
+
         private int sortOrderField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int Id
@@ -2643,7 +2643,7 @@ namespace Common.ServiceClient
                 this.idField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string DocumentType
@@ -2657,7 +2657,7 @@ namespace Common.ServiceClient
                 this.documentTypeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public int SortOrder
@@ -2672,62 +2672,62 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetNonDvsDocumentTypesRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes;
-        
+
         public GetNonDvsDocumentTypesRequest()
         {
         }
-        
+
         public GetNonDvsDocumentTypesRequest(Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
         {
             this.GetNonDvsDocumentTypes = GetNonDvsDocumentTypes;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetNonDvsDocumentTypesResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetNonDvsDocumentTypesResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1;
-        
+
         public GetNonDvsDocumentTypesResponse()
         {
         }
-        
+
         public GetNonDvsDocumentTypesResponse(Common.ServiceClient.GetNonDvsDocumentTypesResponseType GetNonDvsDocumentTypesResponse1)
         {
             this.GetNonDvsDocumentTypesResponse1 = GetNonDvsDocumentTypesResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class UpdateUSIContactDetailsType
     {
-        
+
         private string orgCodeField;
-        
+
         private string uSIField;
-        
+
         private string userReferenceField;
-        
+
         private ContactDetailsUpdateType contactDetailsUpdateField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -2741,7 +2741,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string USI
@@ -2755,7 +2755,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string UserReference
@@ -2769,7 +2769,7 @@ namespace Common.ServiceClient
                 this.userReferenceField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public ContactDetailsUpdateType ContactDetailsUpdate
@@ -2784,22 +2784,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ContactDetailsUpdateType
     {
-        
+
         private string countryOfResidenceCodeField;
-        
+
         private string emailAddressField;
-        
+
         private PhoneType phoneField;
-        
+
         private object itemField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CountryOfResidenceCode
@@ -2813,7 +2813,7 @@ namespace Common.ServiceClient
                 this.countryOfResidenceCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string EmailAddress
@@ -2827,7 +2827,7 @@ namespace Common.ServiceClient
                 this.emailAddressField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public PhoneType Phone
@@ -2841,7 +2841,7 @@ namespace Common.ServiceClient
                 this.phoneField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("InternationalAddress", typeof(string), Order=3)]
         [System.Xml.Serialization.XmlElementAttribute("NationalAddress", typeof(NationalAddressType), Order=3)]
@@ -2857,18 +2857,18 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class UpdateUSIContactDetailsResponseType
     {
-        
+
         private UpdateUSIContactDetailsResponseTypeResult resultField;
-        
+
         private ErrorType[] errorsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public UpdateUSIContactDetailsResponseTypeResult Result
@@ -2882,7 +2882,7 @@ namespace Common.ServiceClient
                 this.resultField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
@@ -2898,87 +2898,87 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum UpdateUSIContactDetailsResponseTypeResult
     {
-        
+
         /// <remarks/>
         Success,
-        
+
         /// <remarks/>
         Failure,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateUSIContactDetailsRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails;
-        
+
         public UpdateUSIContactDetailsRequest()
         {
         }
-        
+
         public UpdateUSIContactDetailsRequest(Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
         {
             this.UpdateUSIContactDetails = UpdateUSIContactDetails;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateUSIContactDetailsResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateUSIContactDetailsResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1;
-        
+
         public UpdateUSIContactDetailsResponse()
         {
         }
-        
+
         public UpdateUSIContactDetailsResponse(Common.ServiceClient.UpdateUSIContactDetailsResponseType UpdateUSIContactDetailsResponse1)
         {
             this.UpdateUSIContactDetailsResponse1 = UpdateUSIContactDetailsResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class UpdateUSIPersonalDetailsType
     {
-        
+
         private string orgCodeField;
-        
+
         private string uSIField;
-        
+
         private bool dVSCheckRequiredField;
-        
+
         private string userReferenceField;
-        
+
         private UpdateUSIPersonalDetailsTypePersonalDetailsModifier personalDetailsModifierField;
-        
+
         private PersonalDetailsUpdateType personalDetailsUpdateField;
-        
+
         private DVSDocumentType dVSDocumentField;
-        
+
         private int nonDvsDocumentTypeIdField;
-        
+
         private bool nonDvsDocumentTypeIdFieldSpecified;
-        
+
         private string nonDvsDocumentTypeOtherField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -2992,7 +2992,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string USI
@@ -3006,7 +3006,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool DVSCheckRequired
@@ -3020,7 +3020,7 @@ namespace Common.ServiceClient
                 this.dVSCheckRequiredField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string UserReference
@@ -3034,7 +3034,7 @@ namespace Common.ServiceClient
                 this.userReferenceField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public UpdateUSIPersonalDetailsTypePersonalDetailsModifier PersonalDetailsModifier
@@ -3048,7 +3048,7 @@ namespace Common.ServiceClient
                 this.personalDetailsModifierField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public PersonalDetailsUpdateType PersonalDetailsUpdate
@@ -3062,7 +3062,7 @@ namespace Common.ServiceClient
                 this.personalDetailsUpdateField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public DVSDocumentType DVSDocument
@@ -3076,7 +3076,7 @@ namespace Common.ServiceClient
                 this.dVSDocumentField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public int NonDvsDocumentTypeId
@@ -3090,7 +3090,7 @@ namespace Common.ServiceClient
                 this.nonDvsDocumentTypeIdField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool NonDvsDocumentTypeIdSpecified
@@ -3104,7 +3104,7 @@ namespace Common.ServiceClient
                 this.nonDvsDocumentTypeIdFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string NonDvsDocumentTypeOther
@@ -3119,76 +3119,76 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum UpdateUSIPersonalDetailsTypePersonalDetailsModifier
     {
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         MiddleName,
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         SingleName,
-        
+
         /// <remarks/>
         DateOfBirth,
-        
+
         /// <remarks/>
         CountryOfBirth,
-        
+
         /// <remarks/>
         TownCityOfBirth,
-        
+
         /// <remarks/>
         Gender,
-        
+
         /// <remarks/>
         PreferredFirstName,
-        
+
         /// <remarks/>
         PreferredFamilyName,
-        
+
         /// <remarks/>
         PreferredSingleName,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class PersonalDetailsUpdateType
     {
-        
+
         private PersonalDetailsUpdateTypeGender genderField;
-        
+
         private bool genderFieldSpecified;
-        
+
         private string[] itemsField;
-        
+
         private ItemsChoiceType5[] itemsElementNameField;
-        
+
         private System.DateTime dateOfBirthField;
-        
+
         private bool dateOfBirthFieldSpecified;
-        
+
         private string countryOfBirthCodeField;
-        
+
         private string townCityOfBirthField;
-        
+
         private string preferredFirstNameField;
-        
+
         private string preferredFamilyNameField;
-        
+
         private string preferredSingleNameField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public PersonalDetailsUpdateTypeGender Gender
@@ -3202,7 +3202,7 @@ namespace Common.ServiceClient
                 this.genderField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool GenderSpecified
@@ -3216,7 +3216,7 @@ namespace Common.ServiceClient
                 this.genderFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("FamilyName", typeof(string), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("FirstName", typeof(string), Order=1)]
@@ -3234,7 +3234,7 @@ namespace Common.ServiceClient
                 this.itemsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=2)]
         [System.Xml.Serialization.XmlIgnoreAttribute()]
@@ -3249,7 +3249,7 @@ namespace Common.ServiceClient
                 this.itemsElementNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
         public System.DateTime DateOfBirth
@@ -3263,7 +3263,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool DateOfBirthSpecified
@@ -3277,7 +3277,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthFieldSpecified = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string CountryOfBirthCode
@@ -3291,7 +3291,7 @@ namespace Common.ServiceClient
                 this.countryOfBirthCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string TownCityOfBirth
@@ -3305,7 +3305,7 @@ namespace Common.ServiceClient
                 this.townCityOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string PreferredFirstName
@@ -3319,7 +3319,7 @@ namespace Common.ServiceClient
                 this.preferredFirstNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string PreferredFamilyName
@@ -3333,7 +3333,7 @@ namespace Common.ServiceClient
                 this.preferredFamilyNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         public string PreferredSingleName
@@ -3348,55 +3348,55 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum PersonalDetailsUpdateTypeGender
     {
-        
+
         /// <remarks/>
         M,
-        
+
         /// <remarks/>
         F,
-        
+
         /// <remarks/>
         X,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws", IncludeInSchema=false)]
     public enum ItemsChoiceType5
     {
-        
+
         /// <remarks/>
         FamilyName,
-        
+
         /// <remarks/>
         FirstName,
-        
+
         /// <remarks/>
         MiddleName,
-        
+
         /// <remarks/>
         SingleName,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class UpdateUSIPersonalDetailsResponseType
     {
-        
+
         private UpdateUSIPersonalDetailsResponseTypeResult resultField;
-        
+
         private UpdateUSIPersonalDetailsResponseTypeIdentityDocumentVerified identityDocumentVerifiedField;
-        
+
         private ErrorType[] errorsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public UpdateUSIPersonalDetailsResponseTypeResult Result
@@ -3410,7 +3410,7 @@ namespace Common.ServiceClient
                 this.resultField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public UpdateUSIPersonalDetailsResponseTypeIdentityDocumentVerified IdentityDocumentVerified
@@ -3424,7 +3424,7 @@ namespace Common.ServiceClient
                 this.identityDocumentVerifiedField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
@@ -3440,91 +3440,91 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum UpdateUSIPersonalDetailsResponseTypeResult
     {
-        
+
         /// <remarks/>
         Success,
-        
+
         /// <remarks/>
         Failure,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum UpdateUSIPersonalDetailsResponseTypeIdentityDocumentVerified
     {
-        
+
         /// <remarks/>
         True,
-        
+
         /// <remarks/>
         False,
-        
+
         /// <remarks/>
         NotRequired,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateUSIPersonalDetailsRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails;
-        
+
         public UpdateUSIPersonalDetailsRequest()
         {
         }
-        
+
         public UpdateUSIPersonalDetailsRequest(Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
         {
             this.UpdateUSIPersonalDetails = UpdateUSIPersonalDetails;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class UpdateUSIPersonalDetailsResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateUSIPersonalDetailsResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1;
-        
+
         public UpdateUSIPersonalDetailsResponse()
         {
         }
-        
+
         public UpdateUSIPersonalDetailsResponse(Common.ServiceClient.UpdateUSIPersonalDetailsResponseType UpdateUSIPersonalDetailsResponse1)
         {
             this.UpdateUSIPersonalDetailsResponse1 = UpdateUSIPersonalDetailsResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class LocateUSIType
     {
-        
+
         private string orgCodeField;
-        
+
         private string userReferenceField;
-        
+
         private PersonalDetailsLocateType personalDetailsField;
-        
+
         private ContactDetailsLocateType contactDetailsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -3538,7 +3538,7 @@ namespace Common.ServiceClient
                 this.orgCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string UserReference
@@ -3552,7 +3552,7 @@ namespace Common.ServiceClient
                 this.userReferenceField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public PersonalDetailsLocateType PersonalDetails
@@ -3566,7 +3566,7 @@ namespace Common.ServiceClient
                 this.personalDetailsField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public ContactDetailsLocateType ContactDetails
@@ -3581,28 +3581,28 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class PersonalDetailsLocateType
     {
-        
+
         private PersonalDetailsLocateTypeGender genderField;
-        
+
         private string firstNameField;
-        
+
         private string middleNameField;
-        
+
         private string familyNameField;
-        
+
         private string singleNameField;
-        
+
         private System.DateTime dateOfBirthField;
-        
+
         private string townCityOfBirthField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public PersonalDetailsLocateTypeGender Gender
@@ -3616,7 +3616,7 @@ namespace Common.ServiceClient
                 this.genderField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string FirstName
@@ -3630,7 +3630,7 @@ namespace Common.ServiceClient
                 this.firstNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string MiddleName
@@ -3644,7 +3644,7 @@ namespace Common.ServiceClient
                 this.middleNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string FamilyName
@@ -3658,7 +3658,7 @@ namespace Common.ServiceClient
                 this.familyNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string SingleName
@@ -3672,7 +3672,7 @@ namespace Common.ServiceClient
                 this.singleNameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=5)]
         public System.DateTime DateOfBirth
@@ -3686,7 +3686,7 @@ namespace Common.ServiceClient
                 this.dateOfBirthField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public string TownCityOfBirth
@@ -3701,38 +3701,38 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://usi.gov.au/2022/ws")]
     public enum PersonalDetailsLocateTypeGender
     {
-        
+
         /// <remarks/>
         M,
-        
+
         /// <remarks/>
         F,
-        
+
         /// <remarks/>
         X,
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class ContactDetailsLocateType
     {
-        
+
         private string countryOfResidenceCodeField;
-        
+
         private string emailAddressField;
-        
+
         private PhoneType phoneField;
-        
+
         private object itemField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CountryOfResidenceCode
@@ -3746,7 +3746,7 @@ namespace Common.ServiceClient
                 this.countryOfResidenceCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string EmailAddress
@@ -3760,7 +3760,7 @@ namespace Common.ServiceClient
                 this.emailAddressField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public PhoneType Phone
@@ -3774,7 +3774,7 @@ namespace Common.ServiceClient
                 this.phoneField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("InternationalAddress", typeof(string), Order=3)]
         [System.Xml.Serialization.XmlElementAttribute("NationalAddress", typeof(NationalAddressType), Order=3)]
@@ -3790,22 +3790,22 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class LocateUSIResponseType
     {
-        
+
         private LocateResultType resultField;
-        
+
         private string uSIField;
-        
+
         private string contactDetailsMessageField;
-        
+
         private ErrorType[] errorsField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public LocateResultType Result
@@ -3819,7 +3819,7 @@ namespace Common.ServiceClient
                 this.resultField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string USI
@@ -3833,7 +3833,7 @@ namespace Common.ServiceClient
                 this.uSIField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string ContactDetailsMessage
@@ -3847,7 +3847,7 @@ namespace Common.ServiceClient
                 this.contactDetailsMessageField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         [System.Xml.Serialization.XmlArrayItemAttribute("Error", IsNullable=false)]
@@ -3863,81 +3863,81 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public enum LocateResultType
     {
-        
+
         /// <remarks/>
         Exact,
-        
+
         /// <remarks/>
         MultipleExact,
-        
+
         /// <remarks/>
         SingleNoContactMatch,
-        
+
         /// <remarks/>
         MultipleNoContactMatch,
-        
+
         /// <remarks/>
         NoMatch,
-        
+
         /// <remarks/>
         NoIdenticalStrongPartial,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class LocateUSIRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.LocateUSIType LocateUSI;
-        
+
         public LocateUSIRequest()
         {
         }
-        
+
         public LocateUSIRequest(Common.ServiceClient.LocateUSIType LocateUSI)
         {
             this.LocateUSI = LocateUSI;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class LocateUSIResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="LocateUSIResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.LocateUSIResponseType LocateUSIResponse1;
-        
+
         public LocateUSIResponse()
         {
         }
-        
+
         public LocateUSIResponse(Common.ServiceClient.LocateUSIResponseType LocateUSIResponse1)
         {
             this.LocateUSIResponse1 = LocateUSIResponse1;
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class GetCountriesType
     {
-        
+
         private string orgCodeField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string OrgCode
@@ -3952,16 +3952,16 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class GetCountriesResponseType
     {
-        
+
         private CountryDetailsType[] countriesField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
         [System.Xml.Serialization.XmlArrayItemAttribute("CountryDetails", IsNullable=false)]
@@ -3977,20 +3977,20 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://usi.gov.au/2022/ws")]
     public partial class CountryDetailsType
     {
-        
+
         private string countryCodeField;
-        
+
         private string nameField;
-        
+
         private bool isCurrentField;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string CountryCode
@@ -4004,7 +4004,7 @@ namespace Common.ServiceClient
                 this.countryCodeField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string Name
@@ -4018,7 +4018,7 @@ namespace Common.ServiceClient
                 this.nameField = value;
             }
         }
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public bool IsCurrent
@@ -4033,197 +4033,197 @@ namespace Common.ServiceClient
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCountriesRequest
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.GetCountriesType GetCountries;
-        
+
         public GetCountriesRequest()
         {
         }
-        
+
         public GetCountriesRequest(Common.ServiceClient.GetCountriesType GetCountries)
         {
             this.GetCountries = GetCountries;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetCountriesResponse
     {
-        
+
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCountriesResponse", Namespace="http://usi.gov.au/2022/ws", Order=0)]
         public Common.ServiceClient.GetCountriesResponseType GetCountriesResponse1;
-        
+
         public GetCountriesResponse()
         {
         }
-        
+
         public GetCountriesResponse(Common.ServiceClient.GetCountriesResponseType GetCountriesResponse1)
         {
             this.GetCountriesResponse1 = GetCountriesResponse1;
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     public interface IUSIServiceChannel : Common.ServiceClient.IUSIService, System.ServiceModel.IClientChannel
     {
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     public partial class USIServiceClient : System.ServiceModel.ClientBase<Common.ServiceClient.IUSIService>, Common.ServiceClient.IUSIService
     {
-        
-        public USIServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public USIServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress)
         {
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> Common.ServiceClient.IUSIService.BulkUploadAsync(Common.ServiceClient.BulkUploadRequest request)
         {
             return base.Channel.BulkUploadAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadResponse> BulkUploadAsync(Common.ServiceClient.BulkUploadType BulkUpload)
         {
             Common.ServiceClient.BulkUploadRequest inValue = new Common.ServiceClient.BulkUploadRequest();
             inValue.BulkUpload = BulkUpload;
             return ((Common.ServiceClient.IUSIService)(this)).BulkUploadAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> Common.ServiceClient.IUSIService.BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIRequest request)
         {
             return base.Channel.BulkVerifyUSIAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.BulkVerifyUSIResponse> BulkVerifyUSIAsync(Common.ServiceClient.BulkVerifyUSIType BulkVerifyUSI)
         {
             Common.ServiceClient.BulkVerifyUSIRequest inValue = new Common.ServiceClient.BulkVerifyUSIRequest();
             inValue.BulkVerifyUSI = BulkVerifyUSI;
             return ((Common.ServiceClient.IUSIService)(this)).BulkVerifyUSIAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> Common.ServiceClient.IUSIService.VerifyUSIAsync(Common.ServiceClient.VerifyUSIRequest request)
         {
             return base.Channel.VerifyUSIAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.VerifyUSIResponse> VerifyUSIAsync(Common.ServiceClient.VerifyUSIType VerifyUSI)
         {
             Common.ServiceClient.VerifyUSIRequest inValue = new Common.ServiceClient.VerifyUSIRequest();
             inValue.VerifyUSI = VerifyUSI;
             return ((Common.ServiceClient.IUSIService)(this)).VerifyUSIAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> Common.ServiceClient.IUSIService.BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveRequest request)
         {
             return base.Channel.BulkUploadRetrieveAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(Common.ServiceClient.BulkUploadRetrieveType BulkUploadRetrieve)
         {
             Common.ServiceClient.BulkUploadRetrieveRequest inValue = new Common.ServiceClient.BulkUploadRetrieveRequest();
             inValue.BulkUploadRetrieve = BulkUploadRetrieve;
             return ((Common.ServiceClient.IUSIService)(this)).BulkUploadRetrieveAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> Common.ServiceClient.IUSIService.CreateUSIAsync(Common.ServiceClient.CreateUSIRequest request)
         {
             return base.Channel.CreateUSIAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.CreateUSIResponse> CreateUSIAsync(Common.ServiceClient.CreateUSIType CreateUSI)
         {
             Common.ServiceClient.CreateUSIRequest inValue = new Common.ServiceClient.CreateUSIRequest();
             inValue.CreateUSI = CreateUSI;
             return ((Common.ServiceClient.IUSIService)(this)).CreateUSIAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> Common.ServiceClient.IUSIService.GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesRequest request)
         {
             return base.Channel.GetNonDvsDocumentTypesAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(Common.ServiceClient.GetNonDvsDocumentTypesType GetNonDvsDocumentTypes)
         {
             Common.ServiceClient.GetNonDvsDocumentTypesRequest inValue = new Common.ServiceClient.GetNonDvsDocumentTypesRequest();
             inValue.GetNonDvsDocumentTypes = GetNonDvsDocumentTypes;
             return ((Common.ServiceClient.IUSIService)(this)).GetNonDvsDocumentTypesAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> Common.ServiceClient.IUSIService.UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsRequest request)
         {
             return base.Channel.UpdateUSIContactDetailsAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(Common.ServiceClient.UpdateUSIContactDetailsType UpdateUSIContactDetails)
         {
             Common.ServiceClient.UpdateUSIContactDetailsRequest inValue = new Common.ServiceClient.UpdateUSIContactDetailsRequest();
             inValue.UpdateUSIContactDetails = UpdateUSIContactDetails;
             return ((Common.ServiceClient.IUSIService)(this)).UpdateUSIContactDetailsAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> Common.ServiceClient.IUSIService.UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsRequest request)
         {
             return base.Channel.UpdateUSIPersonalDetailsAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(Common.ServiceClient.UpdateUSIPersonalDetailsType UpdateUSIPersonalDetails)
         {
             Common.ServiceClient.UpdateUSIPersonalDetailsRequest inValue = new Common.ServiceClient.UpdateUSIPersonalDetailsRequest();
             inValue.UpdateUSIPersonalDetails = UpdateUSIPersonalDetails;
             return ((Common.ServiceClient.IUSIService)(this)).UpdateUSIPersonalDetailsAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> Common.ServiceClient.IUSIService.LocateUSIAsync(Common.ServiceClient.LocateUSIRequest request)
         {
             return base.Channel.LocateUSIAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.LocateUSIResponse> LocateUSIAsync(Common.ServiceClient.LocateUSIType LocateUSI)
         {
             Common.ServiceClient.LocateUSIRequest inValue = new Common.ServiceClient.LocateUSIRequest();
             inValue.LocateUSI = LocateUSI;
             return ((Common.ServiceClient.IUSIService)(this)).LocateUSIAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> Common.ServiceClient.IUSIService.GetCountriesAsync(Common.ServiceClient.GetCountriesRequest request)
         {
             return base.Channel.GetCountriesAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<Common.ServiceClient.GetCountriesResponse> GetCountriesAsync(Common.ServiceClient.GetCountriesType GetCountries)
         {
             Common.ServiceClient.GetCountriesRequest inValue = new Common.ServiceClient.GetCountriesRequest();
             inValue.GetCountries = GetCountries;
             return ((Common.ServiceClient.IUSIService)(this)).GetCountriesAsync(inValue);
         }
-        
+
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
         }
-        
+
         #if !NET6_0_OR_GREATER
         public virtual System.Threading.Tasks.Task CloseAsync()
         {
