@@ -18,42 +18,42 @@ public class IssuerBindingUsiServiceClient(
     IConfiguration configuration,
     ILogger<IUSIService> logger) : BaseUsiServiceClient(logger)
 {
-    protected override IUSIService GetChannel()
+  protected override IUSIService GetChannel()
+  {
+    var (abn, certificate) = keystoreManager.GetX509CertificateData();
+    WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
+    ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
+    ws2007HttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
+    ws2007HttpBinding.Security.Message.EstablishSecurityContext = false;
+    ws2007HttpBinding.Security.Message.NegotiateServiceCredential = false;
+    var wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
+    wsTrustTokenParameters.KeyType = SecurityKeyType.SymmetricKey;
+    wsTrustTokenParameters.TokenType = "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0";
+    if (TimeSpan.TryParse(configuration[SettingsKey.TokenLifeTime], out var timeSpan))
     {
-        var (abn, certificate) = keystoreManager.GetX509CertificateData();
-        WS2007HttpBinding ws2007HttpBinding = new(SecurityMode.TransportWithMessageCredential);
-        ws2007HttpBinding.Security.Message.AlgorithmSuite = SecurityAlgorithmSuite.Basic256Sha256;
-        ws2007HttpBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
-        ws2007HttpBinding.Security.Message.EstablishSecurityContext = false;
-        ws2007HttpBinding.Security.Message.NegotiateServiceCredential = false;
-        var wsTrustTokenParameters = WSTrustTokenParameters.CreateWS2007FederationTokenParameters(ws2007HttpBinding, new EndpointAddress(configuration[SettingsKey.AtoStsEndpoint]));
-        wsTrustTokenParameters.KeyType = SecurityKeyType.SymmetricKey;
-        wsTrustTokenParameters.TokenType = "http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0";
-        if (TimeSpan.TryParse(configuration[SettingsKey.TokenLifeTime], out var timeSpan))
-        {
-            wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetLifeTimeElement(timeSpan));
-            wsTrustTokenParameters.MaxIssuedTokenCachingTime = timeSpan;
-        }
+      wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetLifeTimeElement(timeSpan));
+      wsTrustTokenParameters.MaxIssuedTokenCachingTime = timeSpan;
+    }
 
-        var actAs = configuration[SettingsKey.ActAs];
-        if (string.IsNullOrWhiteSpace(actAs))
-        {
-            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(abn);
-        }
-        else
-        {
-            wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(actAs);
-            wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetActAsElement(abn, actAs));
-        }
+    var actAs = configuration[SettingsKey.ActAs];
+    if (string.IsNullOrWhiteSpace(actAs))
+    {
+      wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(abn);
+    }
+    else
+    {
+      wsTrustTokenParameters.Claims = WsMessageHelper.GetRequiredClaimTypes(actAs);
+      wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetActAsElement(abn, actAs));
+    }
 
-        if (Uri.TryCreate(configuration[SettingsKey.TokenAppliesTo], UriKind.Absolute, out var uri))
-        {
-            wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetAppliesToElement(uri));
-        }
+    if (Uri.TryCreate(configuration[SettingsKey.TokenAppliesTo], UriKind.Absolute, out var uri))
+    {
+      wsTrustTokenParameters.AdditionalRequestParameters.Add(WsMessageHelper.GetAppliesToElement(uri));
+    }
 
-        WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters)
-        {
-            Security =
+    WSFederationHttpBinding wsFederationHttpBinding = new(wsTrustTokenParameters)
+    {
+      Security =
             {
                 Mode = SecurityMode.TransportWithMessageCredential,
                 Message =
@@ -63,11 +63,11 @@ public class IssuerBindingUsiServiceClient(
                     NegotiateServiceCredential = false
                 }
             }
-        };
-        ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
-        var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
-        clientCredentials.ClientCertificate.Certificate = certificate;
-        channelFactory.Endpoint.EndpointBehaviors.Add(new UsiServiceClientEndpointBehavior(Logger));
-        return channelFactory.CreateChannel();
-    }
+    };
+    ChannelFactory<IUSIService> channelFactory = new(wsFederationHttpBinding, new EndpointAddress(configuration[SettingsKey.UsiServiceEndpoint]));
+    var clientCredentials = (ClientCredentials)channelFactory.Endpoint.EndpointBehaviors[typeof(ClientCredentials)];
+    clientCredentials.ClientCertificate.Certificate = certificate;
+    channelFactory.Endpoint.EndpointBehaviors.Add(new UsiServiceClientEndpointBehavior(Logger));
+    return channelFactory.CreateChannel();
+  }
 }

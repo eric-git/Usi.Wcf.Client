@@ -2,7 +2,7 @@ namespace Common.Configuration;
 
 public enum ClientMode
 {
-    IssuedToken,
+  IssuedToken,
 
-    IssuerBinding
+  IssuerBinding
 }

@@ -29,7 +29,7 @@ const int maxRecords = 3;
 logger.LogInformation("Invoking {operation}, the top {maxRecords} country data records will be displayed...", nameof(IUSIService.GetCountriesAsync), maxRecords);
 GetCountriesRequest getCountriesRequest = new()
 {
-    GetCountries = new GetCountriesType { OrgCode = orgCode }
+  GetCountries = new GetCountriesType { OrgCode = orgCode }
 };
 var getCountriesResponse = usiServiceClient.GetCountriesAsync(getCountriesRequest).Result;
 Console.WriteLine();
@@ -66,12 +66,12 @@ VerificationType[] records =
 ];
 BulkVerifyUSIRequest bulkVerifyUsiRequest = new()
 {
-    BulkVerifyUSI = new BulkVerifyUSIType
-    {
-        OrgCode = orgCode,
-        NoOfVerifications = records.Length,
-        Verifications = records
-    }
+  BulkVerifyUSI = new BulkVerifyUSIType
+  {
+    OrgCode = orgCode,
+    NoOfVerifications = records.Length,
+    Verifications = records
+  }
 };
 var bulkVerifyUsiResponse = usiServiceClient.BulkVerifyUSIAsync(bulkVerifyUsiRequest).Result;
 Console.WriteLine();

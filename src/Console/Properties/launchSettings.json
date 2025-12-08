@@ -1,38 +1,38 @@
 {
-    "profiles": {
-        "1.1 IssuerBinding Mode (VA1803)": {
-            "commandName": "Project",
-            "environmentVariables": {
-                "mode": "IssuerBinding",
-                "atoSettings:id": "ABRD:27809366375_USIMachine",
-                "usiSettings:code": "VA1803"
-            }
-        },
-        "1.2 IssuedToken Mode (VA1803)": {
-            "commandName": "Project",
-            "environmentVariables": {
-                "mode": "IssuedToken",
-                "atoSettings:id": "ABRD:27809366375_USIMachine",
-                "usiSettings:code": "VA1803"
-            }
-        },
-        "2.1 IssuerBinding Mode (VA1802 - ActAs)": {
-            "commandName": "Project",
-            "environmentVariables": {
-                "mode": "IssuerBinding",
-                "atoSettings:id": "ABRD:11000002568_INGLETON153",
-                "atoSettings:actAs": "96312011219",
-                "usiSettings:code": "VA1802"
-            }
-        },
-        "2.2 IssuedToken Mode (VA1802 - ActAs)": {
-            "commandName": "Project",
-            "environmentVariables": {
-                "mode": "IssuedToken",
-                "atoSettings:id": "ABRD:11000002568_INGLETON153",
-                "atoSettings:actAs": "96312011219",
-                "usiSettings:code": "VA1802"
-            }
-        }
+  "profiles": {
+    "1.1 IssuerBinding Mode (VA1803)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "mode": "IssuerBinding",
+        "atoSettings:id": "ABRD:27809366375_USIMachine",
+        "usiSettings:code": "VA1803"
+      }
+    },
+    "1.2 IssuedToken Mode (VA1803)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "mode": "IssuedToken",
+        "atoSettings:id": "ABRD:27809366375_USIMachine",
+        "usiSettings:code": "VA1803"
+      }
+    },
+    "2.1 IssuerBinding Mode (VA1802 - ActAs)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "mode": "IssuerBinding",
+        "atoSettings:id": "ABRD:11000002568_INGLETON153",
+        "atoSettings:actAs": "96312011219",
+        "usiSettings:code": "VA1802"
+      }
+    },
+    "2.2 IssuedToken Mode (VA1802 - ActAs)": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "mode": "IssuedToken",
+        "atoSettings:id": "ABRD:11000002568_INGLETON153",
+        "atoSettings:actAs": "96312011219",
+        "usiSettings:code": "VA1802"
+      }
     }
+  }
 }

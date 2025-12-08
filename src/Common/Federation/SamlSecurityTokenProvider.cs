@@ -5,5 +5,5 @@ namespace Common.Federation;
 
 public class SamlSecurityTokenProvider(SecurityToken securityToken) : SecurityTokenProvider
 {
-    protected override SecurityToken GetTokenCore(TimeSpan timeout) => securityToken;
+  protected override SecurityToken GetTokenCore(TimeSpan timeout) => securityToken;
 }
