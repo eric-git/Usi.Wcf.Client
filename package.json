@@ -1,0 +1,37 @@
+{
+  "name": "sample-dotnet-wcf-client",
+  "version": "1.0.0",
+  "description": "A sample .NET WCF client application.",
+  "author": {
+    "name": "Eric Wu",
+    "email": "eric.wu@dewr.gov.au",
+    "url": "https://github.com/eric-git"
+  },
+  "type": "module",
+  "scripts": {
+    "spell-check": "npx cspell **/*",
+    "ib-va1803": "dotnet run --project ./src/Console/Console.csproj --launch-profile \"1.1 IssuerBinding Mode (VA1803)\"",
+    "it-va1803": "dotnet run --project ./src/Console/Console.csproj --launch-profile \"1.2 IssuedToken Mode (VA1803)\"",
+    "ib-va1802": "dotnet run --project ./src/Console/Console.csproj --launch-profile \"2.1 IssuerBinding Mode (VA1802 - ActAs)\"",
+    "it-va1802": "dotnet run --project ./src/Console/Console.csproj --launch-profile \"2.2 IssuedToken Mode (VA1802 - ActAs)\""
+  },
+  "devDependencies": {
+    "cspell": "^9.6.4"
+  },
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
+  "license": "MIT",
+  "keywords": [
+    "USI",
+    "WCF",
+    "client",
+    "sample",
+    "dotnet"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eric-git/Usi.Wcf.Client"
+  }
+}

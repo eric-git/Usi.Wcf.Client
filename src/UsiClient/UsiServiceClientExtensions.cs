@@ -8,28 +8,29 @@ namespace UsiClient;
 
 public static class UsiServiceClientExtensions
 {
-  public static IServiceCollection AddUsiClient(this IServiceCollection services, IConfiguration configuration, out ClientMode configuredMode)
-  {
-    ClientMode clientMode = default;
-    var mode = configuration[SettingsKey.Mode];
-    if (!string.IsNullOrWhiteSpace(mode) && !Enum.TryParse(mode, true, out clientMode))
+    public static IServiceCollection AddUsiClient(this IServiceCollection services, IConfiguration configuration, out ClientMode configuredMode)
     {
-      throw new ApplicationException();
-    }
+        ArgumentNullException.ThrowIfNull(configuration);
+        if (!Enum.TryParse(configuration[SettingsKey.Mode], true, out ClientMode clientMode))
+        {
+            throw new InvalidOperationException($"Invalid {SettingsKey.Mode} value.");
+        }
 
-    if (clientMode == ClientMode.IssuedToken)
-    {
-      services.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
-    }
-    else
-    {
-      services.AddTransient<IUSIService, IssuerBindingUsiServiceClient>();
-    }
+        switch (clientMode)
+        {
+            case ClientMode.IssuedToken:
+                services.AddTransient<IUSIService, IssuedTokenUsiServiceClient>();
+                break;
+            case ClientMode.IssuerBinding:
+                services.AddTransient<IUSIService, IssuerBindingUsiServiceClient>();
+                break;
+            default:
+                throw new NotSupportedException($"Invalid {SettingsKey.Mode} value.");
+        }
 
-    services
-        .AddTransient<IKeystoreManager, KeystoreManager>()
-        .AddMemoryCache();
-    configuredMode = clientMode;
-    return services;
-  }
+        services.AddTransient<IKeystoreManager, KeystoreManager>();
+        services.AddMemoryCache();
+        configuredMode = clientMode;
+        return services;
+    }
 }
