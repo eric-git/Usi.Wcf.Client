@@ -1,0 +1,35 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "import": [
+    "@cspell/dict-dotnet/cspell-ext.json"
+  ],
+  "dictionaries": [
+    "dotnet"
+  ],
+  "files": [
+    "**/*.{cs,csproj,json,md}"
+  ],
+  "ignorePaths": [
+    "**/Resources.*",
+    "**/Reference.cs",
+    "**/keystore-usi.xml",
+    "**/*.DotSettings",
+    "**/*.DotSettings.user",
+    "**/bin/**",
+    "**/obj/**",
+    "**/node_modules/**"
+  ],
+  "words": [
+    "ABRD",
+    "appsettings",
+    "credentialtype",
+    "HQ9HHNJC3J",
+    "INGLETON",
+    "IUSI",
+    "Organisation",
+    "OSPfor",
+    "resx",
+    "ZYWIEC"
+  ]
+}

@@ -8,7 +8,6 @@
       "args": [
         "build",
         "${workspaceFolder}/src/Usi.Wcf.Client.sln",
-        "--force",
         "--nologo"
       ],
       "problemMatcher": "$msCompile"

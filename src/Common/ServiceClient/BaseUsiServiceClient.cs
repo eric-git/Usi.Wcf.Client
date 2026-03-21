@@ -1,82 +1,100 @@
+using System.ServiceModel;
+using Common.Logging;
 using Microsoft.Extensions.Logging;
 
 namespace Common.ServiceClient;
 
 public abstract class BaseUsiServiceClient(ILogger<IUSIService> logger) : IUSIService
 {
-  private const string LoggingMessage = "Calling {operation}...";
+    private readonly Lock _sync = new();
 
-  protected ILogger<IUSIService> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
+    protected ILogger<IUSIService> Logger { get; } = logger ?? throw new ArgumentNullException(nameof(logger));
 
-  public async Task<BulkUploadResponse> BulkUploadAsync(BulkUploadRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(BulkUploadAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.BulkUploadAsync(request);
-  }
+    private ChannelFactory<IUSIService> ChannelFactory
+    {
+        get
+        {
+            if (field is not null)
+            {
+                return field;
+            }
 
-  public async Task<BulkVerifyUSIResponse> BulkVerifyUSIAsync(BulkVerifyUSIRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(BulkVerifyUSIAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.BulkVerifyUSIAsync(request);
-  }
+            lock (_sync)
+            {
+                return field = CreateChannelFactory();
+            }
+        }
+    }
 
-  public async Task<VerifyUSIResponse> VerifyUSIAsync(VerifyUSIRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(VerifyUSIAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.VerifyUSIAsync(request);
-  }
+    public async Task<BulkUploadResponse> BulkUploadAsync(BulkUploadRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(BulkUploadAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.BulkUploadAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(BulkUploadRetrieveRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(BulkUploadRetrieveAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.BulkUploadRetrieveAsync(request);
-  }
+    public async Task<BulkVerifyUSIResponse> BulkVerifyUSIAsync(BulkVerifyUSIRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(BulkVerifyUSIAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.BulkVerifyUSIAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<CreateUSIResponse> CreateUSIAsync(CreateUSIRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(CreateUSIAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.CreateUSIAsync(request);
-  }
+    public async Task<VerifyUSIResponse> VerifyUSIAsync(VerifyUSIRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(VerifyUSIAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.VerifyUSIAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(GetNonDvsDocumentTypesRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(GetNonDvsDocumentTypesAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.GetNonDvsDocumentTypesAsync(request);
-  }
+    public async Task<BulkUploadRetrieveResponse> BulkUploadRetrieveAsync(BulkUploadRetrieveRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(BulkUploadRetrieveAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.BulkUploadRetrieveAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(UpdateUSIContactDetailsRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(UpdateUSIContactDetailsAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.UpdateUSIContactDetailsAsync(request);
-  }
+    public async Task<CreateUSIResponse> CreateUSIAsync(CreateUSIRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(CreateUSIAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.CreateUSIAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(UpdateUSIPersonalDetailsRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(UpdateUSIPersonalDetailsAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.UpdateUSIPersonalDetailsAsync(request);
-  }
+    public async Task<GetNonDvsDocumentTypesResponse> GetNonDvsDocumentTypesAsync(GetNonDvsDocumentTypesRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(GetNonDvsDocumentTypesAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.GetNonDvsDocumentTypesAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<LocateUSIResponse> LocateUSIAsync(LocateUSIRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(LocateUSIAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.LocateUSIAsync(request);
-  }
+    public async Task<UpdateUSIContactDetailsResponse> UpdateUSIContactDetailsAsync(UpdateUSIContactDetailsRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(UpdateUSIContactDetailsAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.UpdateUSIContactDetailsAsync(request).ConfigureAwait(false);
+    }
 
-  public async Task<GetCountriesResponse> GetCountriesAsync(GetCountriesRequest request)
-  {
-    Logger.LogDebug(LoggingMessage, nameof(GetCountriesAsync));
-    var usiServiceClient = GetChannel();
-    return await usiServiceClient.GetCountriesAsync(request);
-  }
+    public async Task<UpdateUSIPersonalDetailsResponse> UpdateUSIPersonalDetailsAsync(UpdateUSIPersonalDetailsRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(UpdateUSIPersonalDetailsAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.UpdateUSIPersonalDetailsAsync(request).ConfigureAwait(false);
+    }
 
-  protected abstract IUSIService GetChannel();
+    public async Task<LocateUSIResponse> LocateUSIAsync(LocateUSIRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(LocateUSIAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.LocateUSIAsync(request).ConfigureAwait(false);
+    }
+
+    public async Task<GetCountriesResponse> GetCountriesAsync(GetCountriesRequest request)
+    {
+        Log.OperationDebug(Logger, nameof(GetCountriesAsync));
+        var usiServiceClient = ChannelFactory.CreateChannel();
+        return await usiServiceClient.GetCountriesAsync(request).ConfigureAwait(false);
+    }
+
+    protected abstract ChannelFactory<IUSIService> CreateChannelFactory();
 }

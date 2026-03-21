@@ -42,7 +42,7 @@ This sample demonstrates the following WCF operations:
 ## 📦 Prerequisites
 
 - Latest .NET LTS SDK installed
-- Visual Studio 2022+ or Visual Studio Code
+- Visual Studio 2026+ or Visual Studio Code
 - Access to USI test endpoints
 - Valid test account credentials
 
@@ -59,9 +59,9 @@ $env:DOTNET_ENVIRONMENT = "Development"
 dotnet run --project ./src/Console --launch-profile "1.2 IssuedToken Mode (VA1803)"
 ```
 
-### Bash
+### Shell
 
-```bash
+```shell
 export DOTNET_ENVIRONMENT=Development
 dotnet run --project ./src/Console --launch-profile "1.2 IssuedToken Mode (VA1803)"
 ```

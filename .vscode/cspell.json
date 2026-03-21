@@ -1,8 +1,0 @@
-{
-  "ignorePaths": [
-    "keystore-usi.xml",
-    ".editorconfig",
-    ".gitignore",
-    ".gitattributes"
-  ]
-}
