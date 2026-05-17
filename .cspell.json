@@ -1,15 +1,9 @@
 {
   "version": "0.2",
   "language": "en",
-  "import": [
-    "@cspell/dict-dotnet/cspell-ext.json"
-  ],
-  "dictionaries": [
-    "dotnet"
-  ],
-  "files": [
-    "**/*.{cs,csproj,json,md}"
-  ],
+  "import": ["@cspell/dict-dotnet/cspell-ext.json"],
+  "dictionaries": ["dotnet"],
+  "files": ["**/*.{cs,csproj,json,md}"],
   "ignorePaths": [
     "**/Resources.*",
     "**/Reference.cs",
