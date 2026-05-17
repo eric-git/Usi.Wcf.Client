@@ -7,8 +7,10 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/src/Usi.Wcf.Client.sln",
-        "--nologo"
+        "${workspaceFolder}/src/Usi.Wcf.Client.slnx",
+        "--nologo",
+        "/graph",
+        "/m"
       ],
       "problemMatcher": "$msCompile"
     },
@@ -18,8 +20,10 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/src/Usi.Wcf.Client.sln",
-        "--nologo"
+        "${workspaceFolder}/src/Usi.Wcf.Client.slnx",
+        "--nologo",
+        "/graph",
+        "/m"
       ],
       "problemMatcher": "$msCompile"
     },
@@ -31,7 +35,7 @@
         "watch",
         "run",
         "--project",
-        "${workspaceFolder}/src/Usi.Wcf.Client.sln"
+        "${workspaceFolder}/src/Usi.Wcf.Client.slnx"
       ],
       "problemMatcher": "$msCompile"
     }
