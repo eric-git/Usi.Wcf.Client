@@ -4,6 +4,18 @@ A sample .NET application demonstrating how modern .NET applications consume the
 
 ---
 
+## 🔀 Sequence Diagram
+
+```mermaid
+sequenceDiagram
+  participant Client
+  participant ATO
+  participant USI
+  Client->>ATO: Request a SAML token
+  ATO->>Client: Issue a SAML token
+  Client->>USI: Request with the issued SAML token
+```
+
 ## 🔑 Authentication Modes
 
 Two authentication modes are supported:

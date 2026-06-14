@@ -17,7 +17,8 @@
     "it-va1802": "dotnet run --project ./src/Console/Console.csproj --launch-profile \"2.2 IssuedToken Mode (VA1802 - ActAs)\""
   },
   "devDependencies": {
-    "cspell": "9.7.0"
+    "cspell": "latest",
+    "prettier": "latest"
   },
   "engines": {
     "node": ">=24",

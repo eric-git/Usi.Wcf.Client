@@ -7,6 +7,8 @@
     "ms-vscode.powershell",
     "mads-hartmann.bash-ide-vscode",
     "patcx.vscode-nuget-gallery",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "mermaidchart.vscode-mermaid-chart",
+    "bierner.markdown-mermaid"
   ]
 }
